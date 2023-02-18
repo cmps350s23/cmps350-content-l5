@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flex</title>
+    <style>
+        .container {
+            outline: 1px dotted gray;
+            min-height: 40vh;
+            display: flex;
+            gap: 0.5rem;
+            justify-content: end;
+            align-items: center;
+            /*
+            flex-direction:column;
+            */
+        }
+
+        .container > div {
+            border:1px firebrick solid;
+            background: lightgoldenrodyellow;
+            padding: 0.5rem;
+        }
+
+        /* 1st box will be displayed last (as others items have default order 0)
+         and it will have twice the space as other boxes*/
+        .container > div:nth-child(1) {
+            flex-grow:3;
+            order:1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <h3>Box One</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div>
+            <h3>Box Two</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+        <div>
+            <h3>Box Three</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </div>
+    </div>
+</body>
+</html>

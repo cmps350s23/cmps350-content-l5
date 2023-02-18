@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Responsive Navbar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        header {
+            padding: 1em;
+        }
+
+        .navbar {
+            background: lightgray;
+        }
+
+        .navbar .toggle, .navbar .brand {
+            display: inline-block;
+        }
+
+        .navbar .link {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 1em;
+            text-decoration: none;
+            background: seagreen;
+            color: white;
+        }
+
+        .navbar .link:hover, .navbar .link:active {
+            background: black;
+        }
+
+        .navbar .brand {
+            width: 10em;
+            text-align: center;
+            padding: 1em;
+            background: black;
+            color: white;
+        }
+
+        .navbar .toggle {
+            padding: 1em;
+            color: black;
+            vertical-align: middle;
+        }
+
+        @media (min-width: 48em) {
+            .navbar {
+                display: flex;
+            }
+            .navbar .left, .navbar .right {
+                display: flex;
+                flex: 1;
+            }
+            .navbar .link {
+                width: auto;
+            }
+            .navbar .right {
+                justify-content: flex-end;
+            }
+            .navbar .toggle {
+                display: none;
+            }
+        }
+        .navbar div {
+            display: none;
+        }
+
+        @media (min-width: 48em) {
+            .navbar div {
+                display: flex;
+            }
+        }
+
+        @media (max-width: 48em) {
+            .navbar.active .toggle {
+                background: seagreen;
+                color: white;
+            }
+            .navbar.active div {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h3>Flexbox Responsive Navigation Menu</h3>
+        <nav class="navbar">
+            <a href="#" class="toggle"><i class="fa fa-reorder"></i></a>
+            <a href="#" class="brand">WebBrand</a>
+            <div class="left">
+                <a href="#" class="link">Home</a>
+                <a href="#" class="link">Products</a>
+                <a href="#" class="link">About us</a>
+            </div>
+            <div class="right">
+                <a href="#" class="link">Login</a>
+            </div>
+        </nav>
+    </header>
+    <script>
+        let toggleBtn = document.querySelector('.toggle');
+        console.log(toggleBtn)
+        toggleBtn.addEventListener('click', ()=> {
+            toggleBtn.parentElement.classList.toggle('active');
+        })
+    </script>
+</body>
+</html>

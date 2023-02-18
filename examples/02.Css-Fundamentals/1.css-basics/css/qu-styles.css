@@ -1,0 +1,16 @@
+.content {
+    color: blueviolet;
+    text-decoration: underline;
+}
+
+.title {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 50pt;
+    color: blue;
+    text-decoration: overline;
+
+}
+
+input {
+    color: inherit
+}

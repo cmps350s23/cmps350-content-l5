@@ -1,0 +1,16 @@
+h2 {
+    color: blue;
+    font-size: 30pt;
+}
+
+.alertMsg {
+    color: orange;
+    background-color: yellow;
+    font-size: 28pt;
+}
+
+#alert {
+    color: orangered;
+    background-color: green;
+    font-size: large;
+}

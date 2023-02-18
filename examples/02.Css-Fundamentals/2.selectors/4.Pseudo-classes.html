@@ -35,11 +35,13 @@
             background-color: yellow;
         }
 
-        .quote {font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif}
+        .quote {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+        }
 
         /* More info @ https://developer.mozilla.org/en-US/docs/Web/CSS/::before */
-        .quote:before { content: "«";  color: lightskyblue ;}
-        .quote:after { content: "»";  color: lightskyblue;}
+       p::before { content: "«";  color: lightskyblue ;}
+        p::after { content: "»";  color: lightskyblue;}
     </style>
 </head>
 <body>
@@ -50,7 +52,7 @@
     Country: <input type="text" disabled value="Disneyland"/><br/>
 
     <h1>Links</h1>
-    <p>
+    <p class="quote">
         Mouse over and click the link:
         <a href="http://www.w3schools.com">w3schools.com</a>
     </p>
