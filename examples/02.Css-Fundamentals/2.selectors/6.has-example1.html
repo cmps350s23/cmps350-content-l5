@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Has Example</title>
+    <style>
+      body {
+        font-family: system-ui;
+        padding: 20rem 3rem;
+        background-color: rgb(142, 211, 241);
+      }
+
+      section {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+      }
+
+      /* unvisited link */
+      a:link {
+        color: firebrick;
+      }
+
+      /* visited link */
+      a:visited {
+        color: limegreen;
+      }
+
+      input:focus {
+        background-color: yellow;
+      }
+
+      section > div {
+        background-color: hsl(200 20% 95%);
+        padding: 1rem;
+        box-shadow: 0 0 1rem hsl(0 0% 0% / 0.15);
+      }
+
+      div:has(h1, h2) {
+        background-color: pink;
+      }
+
+      div:has(p) {
+        background-color: limegreen;
+      }
+
+      div:has(p:empty) {
+        background: firebrick;
+      }
+
+      div:has(.fancy-paragraph) {
+        color: rebeccapurple;
+        background: white;
+      }
+
+      div:has(> a) {
+        background: steelblue;
+      }
+
+    </style>
+</head>
+<body>
+    <section>
+      <div >
+        <h1>This div has a title</h2>
+      </div>
+        <div>
+          <p>
+            <div>
+              <h2>This is H2 inside div inside p</h2>
+            </div>
+          </p>
+        </div>
+        <div>
+          <p>This div has a regular paragraph</p>
+        </div>
+        <div>
+          <a href="#">adsf</a>
+        </div>
+        <div>
+          <p class="fancy-paragraph">This div has a paragraph with a class on it</p>
+        </div>
+        <div>
+          <p>Lorem, ipsum dolor sit amet <a href="#">consectetur adipisicing eli</a>t. Recusandae, repellendus!</p>
+        </div>
+        <div>
+          <p>This div has a regular paragraph</p>
+        </div>
+      </section> 
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8" >
+    <style>
+        p::first-letter { color: #ff0000; }
+        p::first-line { color: #0000ff; }
+
+        /* More info @ https://developer.mozilla.org/en-US/docs/Web/CSS/::before */
+        .quote::before { 
+            content: "«";  
+            color: lightskyblue ;
+        }
+        .quote::after {
+             content: "»";  
+             color: lightskyblue;
+        }
+    </style>
+</head>
+<body>
+    <p>You can combine the ::first-letter and ::first-line 
+        pseudo-elements  
+        <br>
+        to add a special effect to the first letter and the first line of a text!
+    </p>
+
+    <br>
+    <span class="quote">
+        إن أقربكم مني مجلساً يوم القيامة أحسنكم أخلاقاً
+    </span>
+</body>
+</html>
