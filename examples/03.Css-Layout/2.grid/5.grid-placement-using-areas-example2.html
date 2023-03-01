@@ -10,10 +10,11 @@
         }
         .container{
             display: grid;
-            /*grid-template-columns: 1fr 2fr; */
+            grid-template-columns: auto auto 1fr; 
             grid-template-areas:
-                    ".       header header"
-                    "sidebar content content";
+                    ".       nav welcome"
+                    "sidebar content content"
+                    "footer footer footer";
             grid-gap: 10px;
             text-align: center;
         }
@@ -24,6 +25,16 @@
             padding: 20px;
             font-size: 150%;
         }
+
+        .container > div:nth-child(2) {
+            grid-area: welcome;
+        }
+
+        .container > footer {
+            grid-area: footer;
+            background: lightyellow;
+        }
+
         .sidebar {
             grid-area: sidebar;
         }
@@ -32,9 +43,15 @@
             grid-area: content;
         }
 
-        .header {
-            grid-area: header;
-            background-color: yellow !important;
+        .container > nav {
+            grid-area: nav;
+            background-color: yellow;
+        }
+
+        .container > nav ul {
+            display: flex;
+            gap: 0.5rem;
+            list-style: none;
         }
     </style>
 </head>
@@ -56,9 +73,19 @@
     </ul>
 </div>
 <div class="container">
-    <div class="header">Header</div>
-    <div class="sidebar">Sidebar</div>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact us</a></li>
+        </ul>   
+    </nav>
+    <div>Welcome Fulna!</div>
+    <div class="sidebar" contenteditable>Sidebar</div>
     <div class="content">Content</div>
+    <footer>Copyright QU</footer>
 </div>
 </body>
 </html>
