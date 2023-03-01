@@ -1,0 +1,164 @@
+[
+      {
+        "id": 1,
+        "first_name": "John",
+        "last_name": "Doe",
+        "email": "johndoe@organizer.com",
+        "password": "password123",
+        "role": "organizer"
+      },
+      {
+        "id": 2,
+        "first_name": "Jane",
+        "last_name": "Doe",
+        "email": "janedoe@organizer.com",
+        "password": "password123",
+        "role": "organizer"
+      },
+      {
+        "id": 3,
+        "first_name": "Bob",
+        "last_name": "Smith",
+        "email": "bobsmith@reviewer.com",
+        "password": "password123",
+        "role": "reviewer"
+      },
+      {
+        "id": 4,
+        "first_name": "Alice",
+        "last_name": "Johnson",
+        "email": "alicejohnson@reviewer.com",
+        "password": "password123",
+        "role": "reviewer"
+      },
+      {
+        "id": 5,
+        "first_name": "David",
+        "last_name": "Brown",
+        "email": "davidbrown@reviewer.com",
+        "password": "password123",
+        "role": "reviewer"
+      },
+      {
+        "id": 6,
+        "first_name": "Emily",
+        "last_name": "Davis",
+        "email": "emilydavis@reviewer.com",
+        "password": "password123",
+        "role": "reviewer"
+      },
+      {
+        "id": 7,
+        "first_name": "Oliver",
+        "last_name": "Martin",
+        "email": "olivermartin@reviewer.com",
+        "password": "password123",
+        "role": "reviewer"
+      },
+      {
+        "id": 8,
+        "first_name": "Sophie",
+        "last_name": "Miller",
+        "email": "sophiemiller@reviewer.com",
+        "password": "password123",
+        "role": "reviewer"
+      },
+      {
+        "id": 9,
+        "first_name": "Luke",
+        "last_name": "Harris",
+        "email": "lukeharris@reviewer.com",
+        "password": "password123",
+        "role": "reviewer"
+      },
+      {
+        "id": 10,
+        "first_name": "Mia",
+        "last_name": "Wilson",
+        "email": "miawilson@reviewer.com",
+        "password": "password123",
+        "role": "reviewer"
+      },
+      {
+        "id": 11,
+        "first_name": "Noah",
+        "last_name": "Thomas",
+        "email": "noahthomas@reviewer.com",
+        "password": "password123",
+        "role": "reviewer"
+      },
+      {
+        "id": 12,
+        "first_name": "Ava",
+        "last_name": "Lee",
+        "email": "avalee@reviewer.com",
+        "password": "password123",
+        "role": "reviewer"
+      },
+      {
+        "id": 13,
+        "first_name": "Jacob",
+        "last_name": "Clark",
+        "email": "jacobclark@reviewer.com",
+        "password": "password123",
+        "role": "reviewer"
+      },
+    {
+        "id": 14,
+        "first_name": "Emma",
+        "last_name": "Walker",
+        "email": "emmawalker@author.com",
+        "password": "password123",
+        "role": "author"
+    },
+    {
+        "id": 15,
+        "first_name": "Ethan",
+        "last_name": "Turner",
+        "email": "ethanturner@author.com",
+        "password": "password123",
+        "role": "author"
+    },
+    {
+        "id": 16,
+        "first_name": "Chloe",
+        "last_name": "Parker",
+        "email": "chloeparker@author.com",
+        "password": "password123",
+        "role": "author"
+    },
+    {
+        "id": 17,
+        "first_name": "William",
+        "last_name": "Hall",
+        "email": "williamhall@author.com",
+        "password": "password123",
+        "role": "author"
+    },
+    {
+        "id": 18,
+        "first_name": "Grace",
+        "last_name": "Garcia",
+        "email": "gracegarcia@author.com",
+        "password": "password123",
+        "role": "author"
+    },
+    {
+        "id": 19,
+        "first_name": "Daniel",
+        "last_name": "Young",
+        "email": "danielyoung@author.com",
+        "password": "password123",
+        "role": "author"
+    },
+    {
+        "id": 20,
+        "first_name": "Zoe",
+        "last_name": "Allen",
+        "email": "zoeallen@author.com",
+        "password": "password123",
+        "role": "author"
+    }
+]
+
+  
