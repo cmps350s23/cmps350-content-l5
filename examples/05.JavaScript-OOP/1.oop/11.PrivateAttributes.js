@@ -1,4 +1,5 @@
 class User {
+    static affiliation = 'Qatar University'
     // Random number between 0 and 100
     #randomPrefix = Math.floor(Math.random() * 100);
     #id = `${this.#randomPrefix}${new Date().getFullYear()}`;

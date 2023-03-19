@@ -2,13 +2,18 @@ const person = {
     firstName: 'Samir',
     lastName: 'Saghir',
     height: 54,
-    name()
-      	{
-            return `${this.firstName}  ${this.lastName}`;
-        },
+    get name() {
+        return `${this.firstName}  ${this.lastName}`;
+    },
 
-    makeCoffee: function() {
+    makeCoffee() {
         console.log('☕');
+    },
+    languages: ['Arabic', 'English'],
+    address: {
+        street: '55 Fun St',
+        city: 'Doha',
+        country: 'Qatar'
     }
 };
 
