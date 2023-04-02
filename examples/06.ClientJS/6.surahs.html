@@ -3,6 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Surah Explorer</title>
+    <style>
+        label {
+            color: blue;
+        }
+    </style>
     <script>
         document.addEventListener("DOMContentLoaded", async ()=> {
             const surahs = await getSurahs();
@@ -31,7 +36,7 @@
         async function onSurahChange(surahId) {
             const verses = await getVerses(surahId);
             const versesHtml = `
-                ${verses.map( (v, i) => `<li>${v.text_uthmani} (${i+1})</li>`).join('\n')}
+                ${verses.map( (v, i) => `<li>${v.text_uthmani} (${i+1})</li>`).join(' ')}
             `;
             document.querySelector('#versesList').innerHTML = versesHtml;
         }

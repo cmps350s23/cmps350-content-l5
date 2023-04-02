@@ -1,4 +1,4 @@
-import {getHeroes, addHero, updateHero, deleteHero} from './hero-repo'
+import {getHeroes, addHero} from './hero-repo'
 
 export async function GET(request) {
   try {
@@ -24,18 +24,6 @@ export async function POST(request) {
       console.log(err)
       return Response.json({ error: err.message}, { status: 500 })
   }
-}
-
-export async function PUT(request) {
-  try {
-      const hero = await request.json()
-      await updateHero(hero)
-      return new Response("Hero updated")
-  }
-  catch (err) {
-    console.log(err)
-    return Response.json({ error: err.message}, { status: 500 })
-  } 
 }
 
 /*

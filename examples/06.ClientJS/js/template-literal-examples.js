@@ -55,5 +55,5 @@ const receiptTemplate = (payment) =>
 
 console.log(receiptTemplate(payment));
 // Render the template in the DOM
-document.body.innerHTML = receiptTemplate(payment);
+//document.body.innerHTML = receiptTemplate(payment);
 

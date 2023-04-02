@@ -1,8 +1,9 @@
-import {getHero, deleteHero} from '../hero-repo';
+import {getHero, updateHero, deleteHero} from '../hero-repo';
 
-export async function GET(request, {params}) {
+export async function GET(request,  {params}) {
   try {
-    const heroId = params.id;
+    //const {params} = context;
+    const heroId = params.heroId;
     console.log('getHero.params.id', heroId);
     const hero = await getHero(parseInt(heroId))
     console.log(JSON.stringify(hero, null, 2));
@@ -28,4 +29,16 @@ export async function DELETE(request, {params}) {
     console.log(err);
     return Response.json({ error: err.message}, { status: 500 });
   }
+}
+
+export async function PUT(request) {
+  try {
+      const hero = await request.json()
+      await updateHero(hero)
+      return new Response("Hero updated")
+  }
+  catch (err) {
+    console.log(err)
+    return Response.json({ error: err.message}, { status: 500 })
+  } 
 }
