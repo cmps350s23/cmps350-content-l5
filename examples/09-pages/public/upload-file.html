@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>File Upload</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      
+      input[type=text], select, textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        resize: vertical;
+      }
+      
+      label {
+        padding: 12px 12px 12px 0;
+        display: inline-block;
+      }
+      
+      input[type=submit] {
+        background-color: #04AA6D;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        float: right;
+      }
+      
+      input[type=submit]:hover {
+        background-color: #45a049;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="jobApplicationForm">
+      <label for="name">Your name</label>
+      <input type="text" id="name" name="name"/>
+      <br>
+      <label for="">Position to apply for</label>
+      <select name="position" id="position">
+        <option value="Frontend Dev">Frontend developer</option>
+        <option value="Backend Dev">Backend developer</option>
+        <option value="Fullstack Dev">Fullstack developer</option>
+      </select>
+      <br>
+      <label for="fileInput">Select a CV to upload</label>
+      <input type="file" id="fileInput" />
+      <br>
+      <button type="submit" onclick="onSubmitForm(event)">Submit</button>
+    </form>
+    <ul id="jobApplications"></ul>
+
+    <script>
+      async function onSubmitForm (event) {
+        event.preventDefault()
+
+        const fileInput = document.querySelector('#fileInput')
+        const form = document.querySelector('#jobApplicationForm')
+        const formData = new FormData(form)
+        //const formData = new FormData()
+        formData.append('file', fileInput.files[0])
+
+        try {
+          const response = await fetch('/api/upload', {
+            method: 'POST',
+            body: formData
+          })
+
+          if (response.ok) {
+            console.log('Upload successful')
+            const data = await response.json()
+            displayConfirmation(data)
+            fileInput.value = ''
+          } else {
+            throw new Error('Upload failed')
+          }
+        } catch (error) {
+          console.error(error)
+        }
+      }
+
+      function displayConfirmation(confirmation) {
+        console.log(confirmation.cvUrl)
+            const uploadedFilesList = document.querySelector('#jobApplications')
+            const uploadedFileItem = document.createElement('li')
+            const fileName = confirmation.cvUrl.substring(confirmation.cvUrl.lastIndexOf('/')+1);
+            uploadedFileItem.innerHTML = `
+              ${confirmation.name} applied for ${confirmation.position} position. CV: 
+              <a href="${confirmation.cvUrl}" target='_blank'>${fileName}</a>
+            `
+            uploadedFilesList.appendChild(uploadedFileItem)
+      }
+    </script>
+  </body>
+</html>

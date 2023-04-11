@@ -70,7 +70,7 @@ async function deleteHero(heroId) {
 }
 
 async function getHeroForm() {
-    const url = `hero-form.html`;
+    const url = 'hero-form.html';
     const response = await fetch(url);
     return await response.text();
 }
@@ -84,8 +84,8 @@ async function handleInitPage() {
     try {
         log(''); // Clear any error message displayed on the screen
         const heroes = await getHeroes();
-        const heroesDiv = document.querySelector("#heroes");
-        heroesDiv.innerHTML = heroes2Html(heroes);
+        const heroesMain = document.querySelector("#heroes");
+        heroesMain.innerHTML = heroes2Html(heroes);
     } catch (e) {
         log(e);
     }
@@ -124,7 +124,16 @@ async function handleSubmitHero(event) {
     //Prevent the submit button default behavior
     event.preventDefault();
 
-    const hero = formToObject(form);
+     const hero = {
+        id: form.querySelector('#id').value,
+        name: form.querySelector('#name').value,
+        heroType: form.querySelector('#heroType').value,
+        quote: form.querySelector('#quote').value
+    } 
+
+    console.log(hero)
+
+    //const hero = formToObject(form);
     //If hero.id has value then do update otherwise do add
     if (hero.id) {
         await updateHero(hero);
@@ -154,12 +163,15 @@ async function handleDeleteHero(id) {
 function formToObject(form) {
     // Construct key/value pairs representing form fields and their values,
     const formData = new FormData(form);
+    console.log(formData.toString());
     const formObject = {};
 
     // Convert key/value pairs to an object
     formData.forEach( (value, key) => {
         formObject[key] = value;
     });
+
+    console.log(formObject);
 
     return formObject;
 }
