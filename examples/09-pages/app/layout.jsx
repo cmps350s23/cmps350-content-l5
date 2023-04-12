@@ -1,13 +1,13 @@
-import Header from "./components/Header";
-import "./globals.css";
+import Header from "./components/Header"
+import "./globals.css"
 export default function RootLayout({ children }) {
   return (
     <html>
       <head></head>
       <body>
-        <Header />
+        <Header /> 
         {children}
       </body>
     </html>
-  );
+  )
 }

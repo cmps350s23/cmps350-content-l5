@@ -1,5 +1,5 @@
-import Link from "next/link";
-import styles from "./header.module.css";
+import Link from "next/link"
+import styles from "./header.module.css"
 const links = [
   {
     label: "Home",
@@ -17,7 +17,7 @@ const links = [
     label: "Notes",
     route: "/notes",
   }
-];
+]
 
 export default function Header() {
   return (
@@ -32,5 +32,5 @@ export default function Header() {
         </ul>
       </nav>
     </header>
-  );
+  )
 }
