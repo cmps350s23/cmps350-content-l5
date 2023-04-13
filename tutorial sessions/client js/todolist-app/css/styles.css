@@ -1,0 +1,77 @@
+
+.todo-form {
+    background: #dfe8ec;
+    width: 400px;
+    margin: auto;
+    position: relative;
+    height: fit-content;
+    padding: 10px;
+}
+.deleted {
+    background-color: darkgreen;
+}
+a{
+    display: block;
+    text-align: right;
+    margin : 20px;
+}
+.title {
+    background-color: darkgreen;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    color: white;
+    padding: 10px;
+}
+
+.icon {
+    color: #ff0000;
+    transform: scale(2);
+    margin: 10px;
+}
+.submit-btn{
+    border-style: none;
+    background-color: white;
+}
+.fa-plus {
+    color: white;
+    background-color: #6475ee;
+    padding: 2px;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 10px;
+    background-color: white;
+
+}
+
+input#todo-input {
+    height: 40px;
+    border-radius: 2%;
+    flex: 1;
+    border: 1px solid white;
+    padding-left: 5px;
+}
+
+.todo-title {
+    flex: 1;
+    padding-left: 10px;
+}
+
+.todo {
+    margin: 1px 10px;
+}
+
+.strike {
+    text-decoration: line-through;
+}
