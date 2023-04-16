@@ -34,3 +34,10 @@ button {
   box-sizing: border-box;
 }
 
+.fancyBox {
+  border: 1px solid #ccc;
+  background: yellowgreen;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+}

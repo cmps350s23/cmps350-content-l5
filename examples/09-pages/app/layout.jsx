@@ -5,7 +5,7 @@ export default function RootLayout({ children }) {
     <html>
       <head></head>
       <body>
-        <Header /> 
+     {/*    <Header />  */}
         {children}
       </body>
     </html>

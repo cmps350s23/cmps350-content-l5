@@ -1,5 +1,5 @@
 "use client"
-import {useState, useEffect} from "react"
+import {useState, useEffect} from "react" 
 
 export default function AyaList({surahId}) {
     const [ayat, setAyat] = useState([])
@@ -7,16 +7,18 @@ export default function AyaList({surahId}) {
     //Gets auto-executed every time selectedSurah changes
     useEffect(() => {
         async function getVerses(surahId) {
+            console.log(`Selected Surah: ${surahId}`)
             if (surahId == 0) return []
             const url = `https://api.quran.com/api/v4/quran/verses/uthmani?chapter_number=${surahId}`
             const response = await fetch(url)
             const verses = await response.json()
+            console.log(`Ayat count: ${verses.verses.length}`)
             return  verses.verses
         }
 
-        console.log(`selectedSurah is now ${surahId}`)
+        // Need to use then syntax because the function passed to 
+        // useEffect cannot be asynchronous
         getVerses(surahId).then(verses => setAyat(verses))
-
     }, [surahId])
 
     return (

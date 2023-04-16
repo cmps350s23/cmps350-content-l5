@@ -6,7 +6,7 @@ export default async function GitHubUsers() {
     return await response.json()
   }
   const users = await fetchData()
-  console.log(users)
+  //console.log(users)
   
   return (
     <>
