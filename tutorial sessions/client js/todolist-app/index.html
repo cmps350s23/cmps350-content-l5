@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <form action="#" class="todo-form" id="form">
+            <h1 class="title">ToDo App</h1>
+            <div class="form-group">
+                <input type="text" id="todo-input" placeholder="New Todo ..." name="title">
+
+                <br>
+                <div class="form-group">
+                    <label for="">Completed</label>
+                    <input type="checkbox" id="todo-input" name="completed">
+                </div>
+                <Button type="submit" class="submit-btn"><i class="fa fa-plus" id="add-todo"></i></Button>
+            </div>
+            <div class="todolist-container" id="todolist-container">
+                <!-- we will inject the todos -->
+            </div>
+            <a href="#" id="clear-todos" onclick="clearAllTodos()">Clear All</a>
+        </form>
+        <div>
+        </div>
+        <script src="js/index.js"></script>
+</body>
+
+</html>
+
+<!--
+return ` <div class="form-group todo" id="">
+                    <p class="todo-title" id=""></p>
+                    <input class="completed icon" type="checkbox"
+                    onclick="">
+                    <i class="fa fa-trash icon" onclick=""></i>
+             </div>
+-->
