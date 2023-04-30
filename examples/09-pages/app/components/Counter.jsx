@@ -20,6 +20,11 @@ export default function Counter() {
          setCount(count + 1)
     }
 
+    function handleFancyBoxClick(clickCount) {
+        //alert(`Fancy box clicked! ${clickCount} times`)
+        console.log(`Fancy box clicked! ${clickCount} times`)
+    }
+
     return <div>
         Count: {count}
         <button onClick={ () => increment() }>+</button>
@@ -27,12 +32,16 @@ export default function Counter() {
         <button onClick={ () => setCount(0) }>Reset</button>
         Init Val <input  onChange={ (e) => setCount(parseInt(e.target.value)) } />
         <br />
-        <FancyBox count={count} />
+        <FancyBox count={count} onClick= { handleFancyBoxClick } />
     </div>    
 }
 
-function FancyBox({count}) {
-    return <div className="fancyBox">
+function FancyBox({count, onClick}) {
+    const [clickCount, setClickCount] = useState(1)
+    return <div className="fancyBox" onClick={() => { 
+            setClickCount(clickCount + 1)
+            onClick(clickCount) }
+        }>
         Current Count: {count}
     </div>
 }

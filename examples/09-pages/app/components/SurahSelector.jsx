@@ -4,20 +4,21 @@ import {useState, useEffect, memo} from "react"
  function SurahSelector({onSurahSelected}) {
     const [surahs, setSurahs] = useState([])
 
-    useEffect(() => {
+     useEffect(() => {
         console.log('SurahSelector re-rendered!!!')
     })
 
     //Invoked only one time when the component is first mounted to the DOM.
-    useEffect(() => {
+    useEffect(() => { 
         async function getSurahs() {
             const url = "https://api.quran.com/api/v4/chapters"
             const response = await fetch(url)
             const surahs = await response.json()
+            console.log(`Surah count: ${surahs.chapters.length}`)
             return  surahs.chapters
         }
 
-        console.log(`I just mounted!`)
+        //console.log(`I just mounted!`)
         getSurahs().then(surahList => setSurahs(surahList))
     }, [])
 

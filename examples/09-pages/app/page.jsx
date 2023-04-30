@@ -4,6 +4,8 @@ import GitHubUsers from './components/GitHubUsers'
 import Avatar from './components/Avatar'
 import Bulb from './components/Bulb'
 import SurahExplorer from './components/SurahExplorer'
+import FocusInput from './components/4-UseRef'
+import HookTimer from './components/4-UseRef2'
 
 export default function HomePage() {
   return <main>
@@ -17,8 +19,11 @@ export default function HomePage() {
        <Counter startValue={3} />
       */}
 
+      <HookTimer />
       <SurahExplorer />
+      <FocusInput />
       <Counter startValue={3} />
       <GitHubUsers />
+
    </main>
 }
