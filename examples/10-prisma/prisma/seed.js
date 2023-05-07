@@ -20,8 +20,27 @@ async function main() {
   const prisma = new PrismaClient();
   await prisma.post.deleteMany();
   await prisma.user.deleteMany();
+  await prisma.cat.deleteMany();
 
   try {
+    const cat1 = await prisma.cat.create({
+      data: {
+        name: "Garfield",
+        imageUrl: "garfield.png",
+        breed: "Persian",
+      },
+    });
+    console.log(cat1);
+
+    const cat2 = await prisma.cat.create({
+      data: {
+        name: "Luna",
+        imageUrl: "luna.png",
+        breed: "American Shorthair",
+      },
+    });
+    console.log(cat2);
+
     const alice = await prisma.user.upsert({
       where: { email: "alice@prisma.io" },
       update: {},

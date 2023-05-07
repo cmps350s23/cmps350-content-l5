@@ -5,25 +5,24 @@ generator client {
   provider = "prisma-client-js"
 }
 
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db" //env("DATABASE_URL")
+}
+
 //datasource db {
 //provider = "sqlserver"
 //url      = env("DATABASE_URL")
 //}
 
 model Cat {
-  id    Int    @id @default(autoincrement())
-  name  String
-  image String
-  breed String
-  likes Int    @default(0)
+  id       Int    @id @default(autoincrement())
+  name     String
+  imageUrl String
+  breed    String
+  likes    Int    @default(0)
 }
 
-datasource db {
-  provider = "sqlite"
-  url      = "file:./dev.db" //env("DATABASE_URL")
-}
-
-// Paper, User, Review, Schedule (diagram)
 model User {
   id      Int      @id @default(autoincrement())
   email   String   @unique
