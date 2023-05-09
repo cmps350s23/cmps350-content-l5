@@ -1,5 +1,4 @@
-import { revalidatePath } from "next/cache";
-import { getCat, addCat, updateCat, likeCat } from "../cat-repo";
+import { getCat, addCat, updateCat } from "../cat-repo";
 import LikeButton from "../like-button";
 import { redirect } from "next/navigation";
 
@@ -8,24 +7,14 @@ export default async function CatEditPage({ params }) {
   const catId = params.id;
   console.log("CatEditPage - catId", catId);
 
+  // In case of update get the cat details
   let cat;
   if (catId && catId !== "new") {
     cat = await getCat(catId);
     console.log("CatEditPage - cat", cat);
   }
 
-  async function likeCatHandler(catId) {
-    "use server";
-    console.log("likeCat - catId", catId);
-
-    const likesCount = await likeCat(catId);
-    console.log("likesCount", likesCount);
-    return likesCount;
-    // Revalidate to re-render the UI
-    // revalidatePath(`/cats/${catId}/edit`);
-  }
-
-  async function onSaveThenExit(formData) {
+  async function onSubmit(formData) {
     "use server";
 
     // Mutate data
@@ -38,8 +27,9 @@ export default async function CatEditPage({ params }) {
     console.log("onSubmit - cat:", cat);
 
     const catId = formData.get("id");
-    console.log("onSaveThenExit - catId:", catId);
+    console.log("onSubmit - catId:", catId);
 
+    // If catId is not undefined then update the cat otherwise add it
     if (catId) {
       await updateCat(catId, cat);
     } else {
@@ -49,45 +39,21 @@ export default async function CatEditPage({ params }) {
     redirect("/cats");
   }
 
-  async function onSubmit(formData) {
-    "use server";
-    const cat = {
-      name: formData.get("title"),
-      imageUrl: formData.get("imageUrl"),
-      breed: formData.get("breed"),
-    };
-    await updateCat(catId, cat);
-    // Revalidate to re-render the UI
-    revalidatePath(`/cats/${params.id}/edit`);
-  }
-
   return (
-    <div>
+    <div className="center">
       <form action={onSubmit}>
         <input name="id" type="hidden" defaultValue={cat?.id} />
         <label>Name</label>
         <input name="title" type="text" defaultValue={cat?.name} />
-        <br />
         <label>Image</label>
         <input name="imageUrl" type="text" defaultValue={cat?.imageUrl} />
-        <br />
         <label>Breed</label>
         <input name="breed" type="text" defaultValue={cat?.breed} />
-        <br />
-        {cat && <button type="submit">Save</button>}
-
-        <button type="submit" formAction={onSaveThenExit}>
-          Save and Exit
-        </button>
+        <button type="submit">Submit</button>
       </form>
       <br />
-      {cat && (
-        <LikeButton
-          catId={cat?.id}
-          likesCount={cat?.likes}
-          onLikeCat={likeCatHandler}
-        />
-      )}
+      {/* When updating a cat show the Like button */}
+      {cat && <LikeButton catId={cat?.id} likesCount={cat?.likes} />}
     </div>
   );
 }

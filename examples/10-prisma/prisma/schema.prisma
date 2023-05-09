@@ -38,9 +38,11 @@ model Post {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   published Boolean  @default(false)
+  views     Int      @default(0)
+  likes     Int      @default(0)
   // Used to establish a 1-n relation where each User can have many related Posts
   authorId  Int // Foreign key (FK) associted to PK of User
-  author    User     @relation(fields: [authorId], references: [id])
+  author    User     @relation(fields: [authorId], references: [id], onDelete: Cascade)
 }
 
 model Profile {

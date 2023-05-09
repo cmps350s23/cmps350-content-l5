@@ -1,10 +1,8 @@
 "use client";
 import { useState } from "react";
-// Import onLikeCatHandler server action function
-// Strangely, this import does NOT work!!!
-//import { create } from "../_actions";
+import { onLikeCat } from "./actions";
 
-export default function LikeButton({ catId, likesCount, onLikeCat }) {
+export default function LikeButton({ catId, likesCount }) {
   const [likes, setLikes] = useState(likesCount);
   return (
     <button
