@@ -5,11 +5,12 @@ import {
   deleteUserByEmail,
 } from "./users-repo.js";
 import { updatePost } from "./blogs-repo.js";
+import { PrismaClient } from "@prisma/client";
 
 async function main() {
   try {
     // nested write query - creates a user and post
-    await deleteUserByEmail("samir@prisma.io");
+    /*await deleteUserByEmail("samir@prisma.io");
 
     const user = await addUser({
       name: "samir",
@@ -18,13 +19,12 @@ async function main() {
         create: { title: "Hello World", content: "This is my first post" },
       },
     });
-    console.log(user);
-
-    const usersWithPosts = await getUsersWithPosts();
+    console.log(user);*/
+    /*const usersWithPosts = await getUsersWithPosts();
     console.dir(usersWithPosts, { depth: null });
 
     const post = await updatePost(1, { published: true });
-    console.log(post);
+    console.log(post); */
   } catch (e) {
     console.error(e);
   }
@@ -32,7 +32,16 @@ async function main() {
   //await prisma.$disconnect()
   //}
 
-  const alice = await prisma.user.upsert({
+  const prisma = new PrismaClient();
+  const users = await prisma.$queryRaw`SELECT * FROM User`;
+  //console.log(users);
+
+  const email = "alice@prisma.io";
+  const result =
+    await prisma.$queryRaw`SELECT * FROM User WHERE email = ${email}`;
+  console.log(result);
+
+  /*const alice = await prisma.user.upsert({
     where: { email: "alice@prisma.io" },
     update: {},
     create: {
@@ -48,7 +57,7 @@ async function main() {
     },
   });
 
-  console.log(alice);
+  console.log(alice); */
   /*
   const users = await prisma.user.findMany({
     where: {

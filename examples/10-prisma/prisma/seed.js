@@ -2,17 +2,9 @@ import { PrismaClient } from "@prisma/client";
 import path from "path";
 import { promises as fs } from "fs";
 
-async function getUsers() {
-  const dataPath = path.join(process.cwd(), "data/users.json");
+async function readJSON(filePath) {
+  const dataPath = path.join(process.cwd(), filePath);
   const fileContent = await fs.readFile(dataPath, "utf8");
-  //Return the content of the data file in json format
-  return JSON.parse(fileContent);
-}
-
-async function getBlogs() {
-  const dataPath = path.join(process.cwd(), "data/blogs.json");
-  const fileContent = await fs.readFile(dataPath, "utf8");
-  //Return the content of the data file in json format
   return JSON.parse(fileContent);
 }
 
@@ -81,23 +73,17 @@ async function main() {
     });
     console.log({ alice, bob });
 
-    const users = await getUsers();
-    console.log(users);
-    await Promise.all(
-      users.map(async (user) => {
-        await prisma.user.create({ data: user });
-      })
-    );
+    const users = await readJSON("data/users.json");
+    //console.log(users);
+    // createMany is not supported by SQLite. Use create instead
+    for (const user of users) await prisma.user.create({ data: user });
 
-    const blogs = await getBlogs();
-    console.log(blogs);
-    await Promise.all(
-      blogs.map(async (blog) => {
-        await prisma.post.create({ data: blog });
-      })
-    );
+    const blogs = await readJSON("data/blogs.json");
+    //console.log(blogs);
+    for (const blog of blogs) await prisma.blog.create({ data: blog });
   } catch (e) {
     console.error(e);
+    throw e;
   } finally {
     await prisma.$disconnect();
   }

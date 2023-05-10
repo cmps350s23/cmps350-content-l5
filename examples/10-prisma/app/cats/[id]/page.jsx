@@ -1,17 +1,17 @@
 import { getCat, addCat, updateCat } from "../cat-repo";
-import LikeButton from "../like-button";
+import LikeButton from "../LikeButton";
 import { redirect } from "next/navigation";
 
-export default async function CatEditPage({ params }) {
+export default async function CatForm({ params }) {
   // Fetch data
   const catId = params.id;
-  console.log("CatEditPage - catId", catId);
+  console.log("CatForm - catId", catId);
 
   // In case of update get the cat details
   let cat;
   if (catId && catId !== "new") {
     cat = await getCat(catId);
-    console.log("CatEditPage - cat", cat);
+    console.log("CatForm - cat", cat);
   }
 
   async function onSubmit(formData) {
@@ -41,6 +41,8 @@ export default async function CatEditPage({ params }) {
 
   return (
     <div className="center">
+      {cat ? <h3>Edit Cat {cat?.name}</h3> : <h3>Add Cat</h3>}
+      <br />
       <form action={onSubmit}>
         <input name="id" type="hidden" defaultValue={cat?.id} />
         <label>Name</label>
