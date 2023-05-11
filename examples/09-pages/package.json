@@ -11,7 +11,7 @@
   "dependencies": {
     "formidable": "^3.2.5",
     "json-server": "^0.17.3",
-    "next": "13.2.4",
+    "next": "13.4.1",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   }

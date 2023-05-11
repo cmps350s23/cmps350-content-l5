@@ -1,33 +1,41 @@
 import Welcome from "./components/Welcome";
-import Counter from "./components/Counter";
-import GitHubUsers from "./components/GitHubUsers";
-import Avatar from "./components/Avatar";
-import Bulb from "./components/Bulb";
-import FocusInput from "./components/4-UseRef";
-import HookTimer from "./components/4-UseRef2";
 import Link from "next/link";
 
 export default function HomePage() {
   return (
     <main>
-      <Link href="/useRouter">Accounts (useRouter demo)</Link>
+      <Welcome appName="My 1st Next.js App"></Welcome>
+      <br />
+      <Link href="/useState">useState demo: Bulb (click to turn on/off)</Link>
+      <br />
+      <Link href="/useRef">
+        useRef demo (Focus the input element when the component mounts)
+      </Link>
       <br />
       <Link href="/useEffect">useEffect demo</Link>
       <br />
+      <Link href="/listMap">
+        Using .map to display a list (in a server-side component)
+      </Link>
+      <br />
+      <Link href="/props">
+        Passing props from a parent to a child component
+      </Link>
+      <br />
+      <Link href="/useRouter">useRouter demo (List accounts by type)</Link>
+      <br />
       <Link href="/surahExplorer">Surah Explorer: parent-child demo</Link>
       <br />
-      {/*      <Welcome appName="My 1st Next.js App"></Welcome>
-     <Bulb />
-     <div className='flex-container'>
-          <Avatar username="erradi" picName='abdelkarim_erradi02.jpg'/>
-          <Avatar username="abdulla-alali" picName='Abdulla_Khalid.jpg'/>
-      </div>  
-       <Counter startValue={3} />
-             <HookTimer />
-      */}
-      <FocusInput />
-      <Counter startValue={3} />
-      <GitHubUsers />
+      <Link href="/links">Links example</Link>
+      <br />
+      <Link href="/children">Pass props and children to a component</Link>
+      <br />
+      <Link href="/forms">Forms example</Link>
+      <br />
+      <Link href="/posts">Posts example</Link>
+      <br />
+      <Link href="/notes">Notes example</Link>
+      <br />
     </main>
   );
 }
