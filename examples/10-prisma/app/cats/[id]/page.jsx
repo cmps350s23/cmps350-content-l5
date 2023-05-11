@@ -14,15 +14,17 @@ export default async function CatForm({ params }) {
     console.log("CatForm - cat", cat);
   }
 
-  async function onSubmit(formData) {
+  async function onSubmitHandler(formData) {
     "use server";
 
-    // Mutate data
-    const cat = {
-      name: formData.get("title"),
+    const { name, imageUrl, breed } = Object.fromEntries(formData.entries());
+    const cat = { name, imageUrl, breed };
+    // Or use a simpler way as shown below
+    /*const cat = {
+      name: formData.get("name"),
       imageUrl: formData.get("imageUrl"),
       breed: formData.get("breed"),
-    };
+    };*/
 
     console.log("onSubmit - cat:", cat);
 
@@ -43,10 +45,10 @@ export default async function CatForm({ params }) {
     <div className="center">
       {cat ? <h3>Edit Cat {cat?.name}</h3> : <h3>Add Cat</h3>}
       <br />
-      <form action={onSubmit}>
+      <form action={onSubmitHandler}>
         <input name="id" type="hidden" defaultValue={cat?.id} />
         <label>Name</label>
-        <input name="title" type="text" defaultValue={cat?.name} />
+        <input name="name" type="text" defaultValue={cat?.name} />
         <label>Image</label>
         <input name="imageUrl" type="text" defaultValue={cat?.imageUrl} />
         <label>Breed</label>
