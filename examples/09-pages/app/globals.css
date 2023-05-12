@@ -7,6 +7,15 @@ body {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+main a {
+  display: inline-block;
+  padding-bottom: 0.5rem;
+}
+
+main a::before {
+  content: " - ";
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
