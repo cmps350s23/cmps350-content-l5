@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function HomePage() {
   return (
     <main>
-      <Welcome appName="My 1st Next.js App"></Welcome>
+      <Welcome appName="Next.js demo of key features"></Welcome>
       <br />
       <Link href="/useState">useState demo: Bulb (click to turn on/off)</Link>
       <br />
