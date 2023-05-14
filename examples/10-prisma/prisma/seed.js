@@ -1,18 +1,18 @@
-import { PrismaClient } from "@prisma/client";
-import path from "path";
-import { promises as fs } from "fs";
+import { PrismaClient } from "@prisma/client"
+import path from "path"
+import { promises as fs } from "fs"
 
 async function readJSON(filePath) {
-  const dataPath = path.join(process.cwd(), filePath);
-  const fileContent = await fs.readFile(dataPath, "utf8");
-  return JSON.parse(fileContent);
+  const dataPath = path.join(process.cwd(), filePath)
+  const fileContent = await fs.readFile(dataPath, "utf8")
+  return JSON.parse(fileContent)
 }
 
 async function main() {
-  const prisma = new PrismaClient();
-  await prisma.post.deleteMany();
-  await prisma.user.deleteMany();
-  await prisma.cat.deleteMany();
+  const prisma = new PrismaClient()
+  await prisma.post.deleteMany()
+  await prisma.user.deleteMany()
+  await prisma.cat.deleteMany()
 
   try {
     const cat1 = await prisma.cat.create({
@@ -21,8 +21,8 @@ async function main() {
         imageUrl: "garfield.png",
         breed: "Persian",
       },
-    });
-    console.log(cat1);
+    })
+    console.log(cat1)
 
     const cat2 = await prisma.cat.create({
       data: {
@@ -30,8 +30,8 @@ async function main() {
         imageUrl: "luna.png",
         breed: "American Shorthair",
       },
-    });
-    console.log(cat2);
+    })
+    console.log(cat2)
 
     const alice = await prisma.user.upsert({
       where: { email: "alice@prisma.io" },
@@ -47,7 +47,7 @@ async function main() {
           },
         },
       },
-    });
+    })
 
     const bob = await prisma.user.upsert({
       where: { email: "bob@prisma.io" },
@@ -63,30 +63,30 @@ async function main() {
               published: true,
             },
             {
-              title: "Follow Nexus on Twitter",
-              content: "https://twitter.com/nexusgql",
+              title: "Follow next-auth on Twitter",
+              content: "https://twitter.com/nextauthjs",
               published: true,
             },
           ],
         },
       },
-    });
-    console.log({ alice, bob });
+    })
+    console.log({ alice, bob })
 
-    const users = await readJSON("data/users.json");
+    const users = await readJSON("data/users.json")
     //console.log(users);
     // createMany is not supported by SQLite. Use create instead
-    for (const user of users) await prisma.user.create({ data: user });
+    for (const user of users) await prisma.user.create({ data: user })
 
-    const blogs = await readJSON("data/blogs.json");
+    const blogs = await readJSON("data/blogs.json")
     //console.log(blogs);
-    for (const blog of blogs) await prisma.blog.create({ data: blog });
+    for (const blog of blogs) await prisma.blog.create({ data: blog })
   } catch (e) {
-    console.error(e);
-    throw e;
+    console.error(e)
+    throw e
   } finally {
-    await prisma.$disconnect();
+    await prisma.$disconnect()
   }
 }
 
-await main();
+await main()
