@@ -1,0 +1,162 @@
+[
+  {
+    "id": 1,
+    "firstName": "John",
+    "lastName": "Doe",
+    "email": "johndoe@organizer.com",
+    "password": "password123",
+    "role": "organizer"
+  },
+  {
+    "id": 2,
+    "firstName": "Jane",
+    "lastName": "Doe",
+    "email": "janedoe@organizer.com",
+    "password": "password123",
+    "role": "organizer"
+  },
+  {
+    "id": 3,
+    "firstName": "Bob",
+    "lastName": "Smith",
+    "email": "bobsmith@reviewer.com",
+    "password": "password123",
+    "role": "reviewer"
+  },
+  {
+    "id": 4,
+    "firstName": "Alice",
+    "lastName": "Johnson",
+    "email": "alicejohnson@reviewer.com",
+    "password": "password123",
+    "role": "reviewer"
+  },
+  {
+    "id": 5,
+    "firstName": "David",
+    "lastName": "Brown",
+    "email": "davidbrown@reviewer.com",
+    "password": "password123",
+    "role": "reviewer"
+  },
+  {
+    "id": 6,
+    "firstName": "Emily",
+    "lastName": "Davis",
+    "email": "emilydavis@reviewer.com",
+    "password": "password123",
+    "role": "reviewer"
+  },
+  {
+    "id": 7,
+    "firstName": "Oliver",
+    "lastName": "Martin",
+    "email": "olivermartin@reviewer.com",
+    "password": "password123",
+    "role": "reviewer"
+  },
+  {
+    "id": 8,
+    "firstName": "Sophie",
+    "lastName": "Miller",
+    "email": "sophiemiller@reviewer.com",
+    "password": "password123",
+    "role": "reviewer"
+  },
+  {
+    "id": 9,
+    "firstName": "Luke",
+    "lastName": "Harris",
+    "email": "lukeharris@reviewer.com",
+    "password": "password123",
+    "role": "reviewer"
+  },
+  {
+    "id": 10,
+    "firstName": "Mia",
+    "lastName": "Wilson",
+    "email": "miawilson@reviewer.com",
+    "password": "password123",
+    "role": "reviewer"
+  },
+  {
+    "id": 11,
+    "firstName": "Noah",
+    "lastName": "Thomas",
+    "email": "noahthomas@reviewer.com",
+    "password": "password123",
+    "role": "reviewer"
+  },
+  {
+    "id": 12,
+    "firstName": "Ava",
+    "lastName": "Lee",
+    "email": "avalee@reviewer.com",
+    "password": "password123",
+    "role": "reviewer"
+  },
+  {
+    "id": 13,
+    "firstName": "Jacob",
+    "lastName": "Clark",
+    "email": "jacobclark@reviewer.com",
+    "password": "password123",
+    "role": "reviewer"
+  },
+  {
+    "id": 14,
+    "firstName": "Emma",
+    "lastName": "Walker",
+    "email": "emmawalker@author.com",
+    "password": "password123",
+    "role": "author"
+  },
+  {
+    "id": 15,
+    "firstName": "Ethan",
+    "lastName": "Turner",
+    "email": "ethanturner@author.com",
+    "password": "password123",
+    "role": "author"
+  },
+  {
+    "id": 16,
+    "firstName": "Chloe",
+    "lastName": "Parker",
+    "email": "chloeparker@author.com",
+    "password": "password123",
+    "role": "author"
+  },
+  {
+    "id": 17,
+    "firstName": "William",
+    "lastName": "Hall",
+    "email": "williamhall@author.com",
+    "password": "password123",
+    "role": "author"
+  },
+  {
+    "id": 18,
+    "firstName": "Grace",
+    "lastName": "Garcia",
+    "email": "gracegarcia@author.com",
+    "password": "password123",
+    "role": "author"
+  },
+  {
+    "id": 19,
+    "firstName": "Daniel",
+    "lastName": "Young",
+    "email": "danielyoung@author.com",
+    "password": "password123",
+    "role": "author"
+  },
+  {
+    "id": 20,
+    "firstName": "Zoe",
+    "lastName": "Allen",
+    "email": "zoeallen@author.com",
+    "password": "password123",
+    "role": "author"
+  }
+]

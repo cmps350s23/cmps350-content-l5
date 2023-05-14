@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confrence Schedule</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fork-awesome@1.2.0/css/fork-awesome.min.css" integrity="sha256-XoaMnoYC5TH6/+ihMEnospgm0J1PM/nioxbOUdnM8HY=" crossorigin="anonymous">
+    <link rel="stylesheet" href="style/base-style.css">
+    <link rel="stylesheet" href="style/schedule-style.css">
+</head>
+<body>
+    <nav>
+        <img src="images/logo.png" alt="">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="schedule.html">Schedule</a></li>
+            <li><a href="login.html">Log in</a></li>
+        </ul>
+    </nav>
+
+    <header class="schedule-header">
+        <h2>Confrence Schedule</h2>
+        <select id="confDatesDD">
+            <option value="">All</option>
+        </select>
+    </header>
+    <main id="main-container">
+        <div class="card-list" id="sessionsList">
+        </div>
+    </main>
+    <footer>
+        <hr>
+        <p class="footer">ConfPlus © 2023</p>
+    </footer>
+    <script src="scripts/schedule.js" type="module"></script>
+</body>
+</html>

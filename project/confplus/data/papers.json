@@ -1,0 +1,205 @@
+[
+  {
+    "id": 1,
+    "title": "Bridging Mathematics and Computer Science Through Threshold Concepts",
+    "authors": [
+      {
+        "id": 1680975569412,
+        "firstName": "Dana",
+        "lastName": "Yasser",
+        "email": "fl005007@qu.edu.qa",
+        "affiliation": "Qatar Univeristy",
+        "isPresenter": true
+      },
+      {
+        "id": 1680975569413,
+        "firstName": "Yaser",
+        "lastName": "Yasser",
+        "email": "dh005007@qu.edu.qa",
+        "affiliation": "Qatar Univeristy",
+        "isPresenter": false
+      },
+      {
+        "id": 1680975569414,
+        "firstName": "Sara",
+        "lastName": "Ahmed",
+        "email": "gh005007@qu.edu.qa",
+        "affiliation": "Qatar Univeristy",
+        "isPresenter": false
+      }
+    ],
+    "reviewers": [6, 5],
+    "abstract": "Do you think you're living an ordinary life? You are so mistaken it's difficult to even explain. The mere fact that you exist makes you extraordinary. The odds of you existing are less than winning the lottery, but here you are. Are you going to let this extraordinary opportunity pass?",
+    "paperURL": "/papers/sample.pdf",
+    "isPresented": true,
+    "reviews": [
+      {
+        "userID": 6,
+        "overallRating": 2,
+        "contribution": 3,
+        "weakness": "Citations are old.",
+        "strength": "Inovative."
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Abstracted Power and Responsibility in Computer Science Ethics Education",
+    "authors": [
+      {
+        "id": 1680975569416,
+        "firstName": "Ahmed",
+        "lastName": "Yasser",
+        "email": "ay005007@qu.edu.qa",
+        "affiliation": "Qatar Univeristy",
+        "isPresenter": true
+      },
+      {
+        "id": 1680975569417,
+        "firstName": "Tara",
+        "lastName": "Yasser",
+        "email": "gh005007@qu.edu.qa",
+        "affiliation": "Qatar Univeristy",
+        "isPresenter": false
+      },
+      {
+        "id": 16809755694018,
+        "firstName": "Yara",
+        "lastName": "Tamer",
+        "email": "fh005007@qu.edu.qa",
+        "affiliation": "Qatar Univeristy",
+        "isPresenter": false
+      }
+    ],
+    "reviewers": [3, 5],
+    "abstract": "He had done everything right. There had been no mistakes throughout the entire process. It had been perfection and he knew it without a doubt, but the results still stared back at him with the fact that he had lost.",
+    "paperURL": "/papers/sample.pdf",
+    "isPresented": true,
+    "reviews": [
+      {
+        "userID": 3,
+        "overallRating": 2,
+        "contribution": 3,
+        "weakness": "Not bad",
+        "strength": "Good"
+      },
+      {
+        "userID": 5,
+        "overallRating": 2,
+        "contribution": 4,
+        "weakness": "Not bad",
+        "strength": "Good"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Technology Talent Development: Beyond an Hour of Code.",
+    "authors": [
+      {
+        "id": 1680975569420,
+        "firstName": "Ken",
+        "lastName": "John",
+        "email": "kj005007@qu.edu.qa",
+        "affiliation": "Qatar Univeristy",
+        "isPresenter": true
+      },
+      {
+        "id": 1680975569421,
+        "firstName": "Hana",
+        "lastName": "Yasser",
+        "email": "sl005007@qu.edu.qa",
+        "affiliation": "Qatar Univeristy",
+        "isPresenter": false
+      },
+      {
+        "id": 1680975569422,
+        "firstName": "Saber",
+        "lastName": "Ahmed",
+        "email": "bk005007@qu.edu.qa",
+        "affiliation": "Qatar Univeristy",
+        "isPresenter": false
+      }
+    ],
+    "reviewers": [4, 9],
+    "abstract": "As technologically gifted students apply their abilities to computer science, they naturally flow through the talent development stages of potential, competency, and expertise. Processes that\n    have always been\n    important for gifted\n    students to learn as they\n    develop potential are\n    embedded in learning\n    code, which engages the\n    beginning programmer in\n    rich and complex authentic\n    projects (Housand et al.,2017).",
+    "paperURL": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+    "isPresented": false,
+    "reviews": [
+      {
+        "userID": 9,
+        "overallRating": "-1",
+        "contribution": "5",
+        "weakness": "Yupp",
+        "strength": "BBBBB"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Abstraction in Computer Science Education: An Overview",
+    "authors": [
+      {
+        "id": 1680975569424,
+        "firstName": "Jana",
+        "lastName": "Raja",
+        "email": "jj005007@qu.edu.qa",
+        "affiliation": "Qatar Univeristy",
+        "isPresenter": true
+      },
+      {
+        "id": 1680975569425,
+        "firstName": "Hana",
+        "lastName": "Yasser",
+        "email": "sl005007@qu.edu.qa",
+        "affiliation": "Qatar Univeristy",
+        "isPresenter": false
+      },
+      {
+        "id": 1680975569426,
+        "firstName": "Saber",
+        "lastName": "Ahmed",
+        "email": "bk005007@qu.edu.qa",
+        "affiliation": "Qatar Univeristy",
+        "isPresenter": false
+      }
+    ],
+    "reviewers": [9, 8],
+    "abstract": "The wolves stopped in their tracks, sizing up the mother and her cubs. It had been over a week since their last meal and they were getting desperate. The cubs would make a good meal, but there were high risks taking on the mother Grizzly. A decision had to be made and the wrong choice could signal the end of the pack.",
+    "paperURL": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+    "isPresented": true,
+    "reviews": [
+      {
+        "userID": 8,
+        "overallRating": 2,
+        "contribution": 3,
+        "weakness": "None",
+        "strength": "Amazing"
+      },
+      {
+        "userID": 9,
+        "overallRating": "2",
+        "contribution": "5",
+        "weakness": "Some sections poorly written",
+        "strength": "Fantastic"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "PAPER TEST",
+    "abstract": "mkcldc",
+    "authors": [
+      {
+        "firstName": " ddlwk",
+        "lastName": " mlmkf",
+        "email": "wow@wow.com",
+        "affiliation": "wmekv"
+      }
+    ],
+    "paperURL": "/papers/paper5.pdf",
+    "reviewers": [9, 13],
+    "isPresented": false,
+    "reviews": []
+  }
+]

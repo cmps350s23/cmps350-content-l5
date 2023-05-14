@@ -1,0 +1,135 @@
+
+fieldset{
+    border: none;
+}
+form,.paperInfo{
+    padding: 0.3rem;
+    background-color: #fafafa;
+    text-align: left;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    border-radius: 0.2rem;
+    width: 100%;
+}
+
+.paperInfo label{
+    text-align: center;
+}
+.textarea{
+    display: flex;
+    flex-direction: column;
+}
+
+main:has(form),main:has(.paperInfo){
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* margin-bottom:4rem ; */
+}
+
+form,.authorCard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.collapsableAbstract,.authorBtns{
+    display: flex;
+}
+
+.arrowDown{
+    transition: 5s ease-in-out;
+    padding: 0.5rem;
+    height: min-content;
+    background-color: #fafafa00;
+    border: none;
+}
+
+.arrowDown i{
+    transition: 0.5s ease;
+    color: #3b3949;
+}
+
+.arrowUp i{
+    transform: rotate(180deg);
+}
+
+.collapseText{
+    max-height: 5ch;
+    /* max-width: 50ch; */
+    overflow: hidden;
+    text-overflow: clip;
+}
+
+.paperInfo{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+span.title{
+    font-weight: 500;
+    font-style: italic;
+}
+
+.authorsList{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
+table.card{
+    padding: 0.4rem;
+    border-radius: 0.3rem;
+}
+table.card th{
+    padding-right: 0.5rem;
+}
+table.card td{
+    text-align: center;
+}
+
+form hr {
+    width: 100%;
+}
+
+.paperReviewCont .button{
+    align-self: stretch;
+}
+
+.loginForm .button{
+    width: 100%
+}
+.authorCard{
+    padding: 0.1rem;
+    border-radius: 1rem;
+}
+
+#title{
+    width: 100%;
+}
+.authorBtns{
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.authorBtns .button{
+    min-width: 2.6rem;
+    padding: 0.4rem;
+    border-radius: 3rem;
+    font-size: 1.5rem;
+}
+/* responsive desgin */
+@media screen and (min-width: 800px){
+    .paperReviewCont .button{
+        max-width: auto;
+        align-self: center;
+    }
+
+    .paperReviewCont{
+        display: grid;
+        grid-gap: 1rem;
+        grid-template-rows: min-content;
+        grid-template-columns: auto auto;
+    }
+}

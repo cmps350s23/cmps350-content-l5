@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Schedule</title>
+    <link rel="stylesheet" href="style/base-style.css">
+    <link rel="stylesheet" href="style/forms-style.css">
+    <link rel="stylesheet" href="style/schedule-style.css">
+</head>
+<body>
+
+    <div class="hidden popup" id="popupContainer">
+        <a href="#" class="card close" onclick="closePopup()"><i class="fa fa-times"></i></a>
+        <div class="presentation-card card">
+            <h4>The Importance of atrificial intelligence in today's society using ML</h3>
+           <p><i class="fa fa-clock-o"></i> 5:30 pm - 6:45 pm</p>
+           <p class="presenters">presenters: Ahmed T., Dana S.</p>
+        </div>
+    </div>
+
+    <nav>
+        <img src="images/logo.png" alt="">
+        <ul>
+            <li><a href="schedule.html">Log Out</a></li>
+        </ul>
+    </nav>
+
+    <header class="schedule-header">
+        <h2>Confrence Schedule</h2>
+        <button class="button add-btn" onclick="loadAsPopup('newSessionForm.html')"> <i class="fa fa-plus"></i> New Session</button>
+    </header>
+
+    <main id="main-container">
+        <div class="card-list" id="sessionsList">
+            <div class="session-card">
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <hr>
+        <p class="footer">ConfPlus © 2023</p>
+    </footer>
+    <script src="scripts/schedulingApp.js" type="module"></script>
+</body>
+
+</html>
