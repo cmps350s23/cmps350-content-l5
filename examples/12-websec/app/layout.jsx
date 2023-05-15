@@ -1,4 +1,4 @@
-import AppBar from "./components/AppBar"
+import NavBar from "./components/NavBar"
 import "./globals.css"
 import UserInfoProvider from "./components/UserInfoProvider"
 
@@ -7,14 +7,12 @@ export const metadata = {
   description: "Example to demonstrate Next-Auth features",
 }
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html>
       <body>
-        <UserInfoProvider>
-          <AppBar />
-          {children}
-        </UserInfoProvider>
+        <NavBar />
+        {children}
       </body>
     </html>
   )

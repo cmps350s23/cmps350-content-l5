@@ -22,6 +22,10 @@
     display: flex;
     gap: 1rem;
   }
+
+  nav span:last-child, a:last-child {
+    margin-left: auto;
+  }
 /*   nav ul li
   {
     display: inline;

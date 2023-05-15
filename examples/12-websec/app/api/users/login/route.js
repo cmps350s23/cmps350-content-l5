@@ -1,4 +1,4 @@
-import { signJwtAccessToken } from "../../../lib/jwt"
+import { signJwtAccessToken } from "@/app/lib/jwt"
 import { PrismaClient } from "@prisma/client"
 import * as bcrypt from "bcrypt"
 
