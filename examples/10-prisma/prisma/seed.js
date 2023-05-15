@@ -78,9 +78,9 @@ async function main() {
     // createMany is not supported by SQLite. Use create instead
     for (const user of users) await prisma.user.create({ data: user })
 
-    const blogs = await readJSON("data/blogs.json")
+    const posts = await readJSON("data/posts.json")
     //console.log(blogs);
-    for (const blog of blogs) await prisma.blog.create({ data: blog })
+    for (const post of posts) await prisma.post.create({ data: post })
   } catch (e) {
     console.error(e)
     throw e
