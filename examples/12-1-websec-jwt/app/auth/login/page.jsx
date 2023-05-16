@@ -13,7 +13,8 @@ export default async function RegistrationForm() {
       user = await login(email, password)
       console.log("Login onSubmit - user:", user)
       // Save id_token in a cookie
-      cookies().set("id_token", user.id_token, { path: "/" })
+      const maxAge = 60 * 60 * 24 * 7 // 1 week
+      cookies().set("id_token", user.id_token, { path: "/", maxAge })
     } catch (error) {
       errorMsg = error.message
       revalidatePath("/auth/login")
@@ -21,8 +22,6 @@ export default async function RegistrationForm() {
     }
     // Workaround as redirect inside try fails
     if (user) {
-      // Force refresh of the page then redirect
-      revalidatePath("/")
       redirect("/")
     }
   }

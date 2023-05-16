@@ -4,7 +4,7 @@ import { verifyJwt } from "@/app/lib/jwt"
 import { getPostsByAuthor } from "@/app/api/posts/posts-repo"
 import Post from "./post"
 
-export default async function UserPosts() {
+export default async function PostsPage() {
   // Get id_token cookie
   const idToken = cookies().get("id_token")?.value
   console.log("UserPosts - id_token:", idToken)

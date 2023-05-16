@@ -27,7 +27,7 @@ export async function GET(request) {
 
   if (!user) {
     return Response.json(
-      { error: "🚫 Unauthorized - id token is invalid.☹️ غشاش" },
+      { error: "🚫 Unauthorized - id token is invalid.☹️ مضروب" },
       { status: 401 }
     )
   }

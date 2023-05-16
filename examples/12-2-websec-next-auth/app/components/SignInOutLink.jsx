@@ -28,10 +28,9 @@ export default function SignInOutLink() {
         </span>
       ) : (
         <span>
-          {/*           <a href="#" onClick={() => signIn()}>
+          <a href="#" onClick={() => signIn()}>
             Sign In
-          </a> */}
-          <Link href={"/auth/login"}>Login</Link>
+          </a>
           <span>/</span>
           <Link href={"/auth/register"}>Register</Link>
         </span>

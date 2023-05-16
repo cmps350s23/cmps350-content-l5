@@ -12,8 +12,8 @@ export const addUser = async (user) => {
   const newUser = await prisma.user.create({
     data: user,
   })
-  const { password, ...userWithoutPassword } = newUser
-  return userWithoutPassword
+  delete newUser.password
+  return newUser
 }
 
 export const getUserByEmail = async (email) =>
@@ -26,11 +26,11 @@ export const getUserByEmail = async (email) =>
 export const login = async (email, password) => {
   const user = await getUserByEmail(email)
   if (user && (await bcrypt.compare(password, user.password))) {
-    const { password, ...userWithoutPass } = user
-    const id_token = signJwt(userWithoutPass)
+    delete user.password
+    const idToken = signJwt(user)
     const userWithJwt = {
-      ...userWithoutPass,
-      id_token,
+      ...user,
+      id_token: idToken,
     }
     return userWithJwt
   } else {
@@ -40,9 +40,9 @@ export const login = async (email, password) => {
 
 export const getUsers = async () => {
   const users = await prisma.user.findMany()
-  const usersWithoutPassword = users.map((user) => {
-    const { password, ...userWithoutPassword } = user
-    return userWithoutPassword
+  const usersWithoutPass = users.map((user) => {
+    const { password, ...userWithoutPass } = user
+    return userWithoutPass
   })
-  return usersWithoutPassword
+  return usersWithoutPass
 }
