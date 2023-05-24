@@ -1,5 +1,5 @@
 {
-  "name": "10-prisma",
+  "name": "11-prisma",
   "//type": "module --remove // and this comment to run js file directly",
   "version": "0.1.0",
   "private": true,

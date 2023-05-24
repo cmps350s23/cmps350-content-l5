@@ -1,4 +1,3 @@
-import { revalidatePath } from "next/cache"
 import RevalidateButton from "./RevalidateButton"
 
 // Return a list of `params` to populate the [surahId] dynamic segment
