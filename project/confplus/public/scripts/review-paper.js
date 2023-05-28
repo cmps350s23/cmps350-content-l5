@@ -1,95 +1,132 @@
-import { api } from "./API-services.js";
-
-const paperDD = document.querySelector("#researchPapers"); //Dropdown to select paper
-let paperArea = document.querySelector("#variablePaperArea"); //Area to display paper info
-let reviewForm; //Review form
-let arrow; //Arrow to collapse abstract
-let abstract; //Abstract text
-let isNewReview = false; //Flag to check if review is new or existing
+const paperDD = document.querySelector("#researchPapers") //Dropdown to select paper
+let paperArea = document.querySelector("#variablePaperArea") //Area to display paper info
+let reviewForm //Review form
+let arrow //Arrow to collapse abstract
+let abstract //Abstract text
+let isNewReview = false //Flag to check if review is new or existing
 
 //Login
-let user = await api.getLoggedInUser();
+const user = await JSON.parse(localStorage.user)
 if (!user) {
   //For testing purposes
-  user = await api.getUserByEmail("lukeharris@reviewer.com");
+  user = await getUserByEmail("lukeharris@reviewer.com")
 }
 
-await loadReviewedPapers();
-await loadReviewPage();
+await loadReviewedPapers()
+await loadReviewPage()
 
-paperDD.addEventListener("change", loadReviewPage); //Load paper info when paper is selected
+paperDD.addEventListener("change", loadReviewPage) //Load paper info when paper is selected
 
 function reselectElements() {
   //Reassign elements after paper info is loaded
-  arrow = document.querySelector("#collapseButton");
-  abstract = document.querySelector("#paperAbstract");
-  reviewForm = document.querySelector("#reviewForm");
+  arrow = document.querySelector("#collapseButton")
+  abstract = document.querySelector("#paperAbstract")
+  reviewForm = document.querySelector("#reviewForm")
 
-  reviewForm.addEventListener("submit", submitReview);
-  arrow.addEventListener("click", toggleCollapse);
+  reviewForm.addEventListener("submit", submitReview)
+  arrow.addEventListener("click", toggleCollapse)
 }
 
 function toggleCollapse() {
   //Collapse/expand abstract
-  arrow.classList.toggle("arrowUp");
-  abstract.classList.toggle("collapseText");
+  arrow.classList.toggle("arrowUp")
+  abstract.classList.toggle("collapseText")
 }
 
 function toggleHidden() {
   //Show/hide loading gif
-  const hidden = document.querySelector("#messageArea");
-  hidden.classList.toggle("hidden");
+  const hidden = document.querySelector("#messageArea")
+  hidden.classList.toggle("hidden")
 }
 
 async function submitReview(e) {
   //Submit review
-  e.preventDefault();
-  toggleHidden();
+  e.preventDefault()
+  toggleHidden()
   //Get review info
-  const paperId = paperDD.value;
-  const userID = user.id;
+  const paperId = paperDD.value
+  const userID = user.id
   const overallRating = document.querySelector(
     'input[name="overallRating"]:checked'
-  ).value;
+  ).value
   const contribution = document.querySelector(
     'input[name="contribution"]:checked'
-  ).value;
-  const strength = document.querySelector("#strength").value;
-  const weakness = document.querySelector("#weakness").value;
+  ).value
+  const strength = document.querySelector("#strength").value
+  const weakness = document.querySelector("#weakness").value
   const review = {
     userID: userID,
     overallRating: overallRating,
     contribution: contribution,
     weakness: weakness,
     strength: strength,
-  };
+  }
   //Submit review
   if (isNewReview) {
-    await api.addReview(paperId, review);
+    await addReview(paperId, review)
   } else {
-    await api.updateReview(paperId, review);
+    await updateReview(paperId, review)
   }
-  toggleHidden();
-  alert("Review Submitted");
+  toggleHidden()
+  alert("Review Submitted")
+}
+
+async function getPaperByReviewerId(id) {
+  const response = await fetch(`/api/papers?reviewerID=${id}`)
+  return await response.json()
+}
+
+async function getPaper(id) {
+  const response = await fetch(`/api/papers/${id}`)
+  return await response.json()
+}
+
+async function getUserByEmail(email) {
+  const response = await fetch(`/api/users?email=${email}`)
+  if (response.status === 404) return undefined
+  const user = await response.json()
+  return user
+}
+
+async function addReview(paperId, review) {
+  const response = await fetch(`/api/papers/${paperId}/reviews`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(review),
+  })
+  return response.json()
+}
+
+async function updateReview(paperId, review) {
+  const response = await fetch(`/api/papers/${paperId}/reviews`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(review),
+  })
+  return response.json()
 }
 
 async function loadReviewPage() {
   //Load paper info and review form
-  toggleHidden();
-  const paperId = paperDD.value;
-  const paper = await api.getPaper(paperId);
-  const userID = user.id;
-  let review = paper.reviews.find((review) => review.userID == userID);
+  toggleHidden()
+  const paperId = paperDD.value
+  const paper = await getPaper(paperId)
+  const userID = user.id
+  let review = paper.reviews?.find((review) => review.userID == userID)
   if (!review) {
     //If no review exists, set default values
-    isNewReview = true;
+    isNewReview = true
     review = {
       userID: userID,
       overallRating: -1,
       contribution: -1,
       weakness: "",
       strength: "",
-    };
+    }
   }
 
   let html = `
@@ -145,19 +182,19 @@ async function loadReviewPage() {
                 
                     </fieldset>
                     <input type="submit" value="Submit" class="button">
-    </form>`;
-  paperArea.innerHTML = html;
-  toggleHidden();
-  reselectElements();
+    </form>`
+  paperArea.innerHTML = html
+  toggleHidden()
+  reselectElements()
 }
 
 function authorsToHTML(authors) {
   return authors
-    .map(
+    ?.map(
       (a) => `<table class="card">
     <tr>
         <th>Name: </th>
-        <td>${a.getFullastName()}</td>
+        <td>${a.firstName} ${a.lastName}</td>
     </tr>
     <tr>
         <th>Email: </th>
@@ -169,7 +206,7 @@ function authorsToHTML(authors) {
     </tr>
 </table>`
     )
-    .join("");
+    .join("")
 }
 
 function overallRatingToHTML(selected) {
@@ -185,9 +222,9 @@ function overallRatingToHTML(selected) {
     <label for="reject">Reject</label><br>`,
     `<input type="radio" id="stronglyreject" name="overallRating" value="-2">
     <label for="stronglyReject">Strongly reject</label><br>`,
-  ];
+  ]
 
-  selected = parseInt(selected);
+  selected = parseInt(selected)
   if (selected != -1) {
     //If a review exists, select the previous values
     const checkedOpts = [
@@ -201,11 +238,11 @@ function overallRatingToHTML(selected) {
         <label for="reject">Reject</label><br>`,
       `<input checked type="radio" id="stronglyreject" name="overallRating" value="-2">
         <label for="stronglyReject">Strongly reject</label><br>`,
-    ];
+    ]
 
-    defaultOpts[selected + 2] = checkedOpts[selected + 2];
+    defaultOpts[selected + 2] = checkedOpts[selected + 2]
   }
-  return defaultOpts.join("");
+  return defaultOpts.join("")
 }
 
 function contributionToHTML(selected) {
@@ -222,9 +259,9 @@ function contributionToHTML(selected) {
     <label for="noObv1">No obvious contribution</label><br>`,
     `<input type="radio" id="noObv2" name="contribution" value="1">
     <label for="noObv2">No contribution at all</label><br>`,
-  ];
+  ]
 
-  selected = parseInt(selected);
+  selected = parseInt(selected)
   if (selected != -1) {
     //If a review exists, select the previous values
 
@@ -240,27 +277,27 @@ function contributionToHTML(selected) {
         <label for="noObv1">No obvious contribution</label><br>`,
       `<input checked type="radio" id="noObv2" name="contribution" value="1">
         <label for="noObv2">No contribution at all</label><br>`,
-    ];
+    ]
 
-    selected = 5 - selected;
-    defaultOpts[selected] = checkedOpts[selected];
+    selected = 5 - selected
+    defaultOpts[selected] = checkedOpts[selected]
   }
-  return defaultOpts.join("");
+  return defaultOpts.join("")
 }
 
 async function loadReviewedPapers() {
   //Load all papers that can be reviewed by the current user
-  toggleHidden();
-  const revPapers = await api.getPaperByReviewerId(user.id);
+  toggleHidden()
+  const revPapers = await getPaperByReviewerId(user.id)
   let html = revPapers
     .filter((p) => !p.isPresented)
     .map((p) => `<option value="${p.id}">${p.title}</option>`)
-    .join("");
+    .join("")
   if (html == "" || html == " ") {
     //If there are no papers to review, display a disabled option
-    html = `<option value="" disabled selected>No Papers to Review</option>`;
+    html = `<option value="" disabled selected>No Papers to Review</option>`
   }
-  const papersDD = document.querySelector("#researchPapers");
-  papersDD.innerHTML = html;
-  toggleHidden();
+  const papersDD = document.querySelector("#researchPapers")
+  papersDD.innerHTML = html
+  toggleHidden()
 }

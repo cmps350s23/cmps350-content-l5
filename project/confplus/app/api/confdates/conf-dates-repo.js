@@ -1,5 +1,5 @@
-import { readJSON } from "../utils.js";
+import { readJSON } from "@/app/lib/utils"
 
 export async function getConfDates() {
-  return await readJSON("data/conf-dates.json");
+  return await readJSON("data/conf-dates.json")
 }

@@ -1,52 +1,49 @@
-import { api } from "./API-services.js";
+async function login(email, password) {
+  const response = await fetch("/api/users/login", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ email, password }),
+  })
+  console.log("login - response", response)
+  if (response.status === 200) return response.json()
+  else throw new Error("Login failed. Email or password incorrect.")
+}
 
-const loginForm = document.querySelector("#loginForm");
-loginForm.addEventListener("submit", login);
+async function onLogin() {
+  window.event.preventDefault()
+  const email = document.querySelector("#email").value
+  const password = document.querySelector("#password").value
 
-async function login(e) {
-  e.preventDefault();
-  const email = document.querySelector("#email").value;
-  const password = document.querySelector("#password").value;
-
-  const user = await api.getUserByEmail(email);
-  if (!user) {
-    //user not found
-    setErrorMessage("&#x26A0; No user with that email exists");
-    return;
-  }
-  if (user.password !== password) {
-    //incorrect password
-    setErrorMessage("&#x26A0; Incorrect password");
-    return;
-  } else {
-    //successful login
-    api.setLoggedInUser(email);
+  try {
+    setErrorMessage("")
+    const user = await login(email, password)
+    localStorage.user = JSON.stringify(user)
     //redirect to appropriate page
     switch (user.role) {
       case "author":
-        window.location.href = "/submit-paper.html";
-        break;
+        window.location.href = "/submit-paper.html"
+        break
       case "reviewer":
-        window.location.href = "/review-paper.html";
-        break;
+        window.location.href = "/review-paper.html"
+        break
       case "organizer":
-        window.location.href = "/schedule-editor.html";
-        break;
+        window.location.href = "/schedule-editor.html"
+        break
 
       default:
-        setErrorMessage("&#x26A0; User role not recognized");
-        break;
+        setErrorMessage(`User role ${user.role} is invalid`)
+        break
     }
+  } catch (error) {
+    setErrorMessage(error.message)
   }
 }
 
 function setErrorMessage(message) {
-  const errorMessage = document.querySelector("#error");
-  toggleErrorMessage();
-  errorMessage.innerHTML = message;
-}
-
-function toggleErrorMessage() {
-  const errorMessage = document.querySelector("#error");
-  errorMessage.classList.toggle("hidden");
+  const errorMessage = document.querySelector("#error")
+  errorMessage.innerHTML = message
+  if (message) errorMessage.classList.remove("hidden")
+  else errorMessage.classList.add("hidden")
 }

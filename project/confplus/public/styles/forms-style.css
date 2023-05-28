@@ -2,6 +2,7 @@
 fieldset{
     border: none;
 }
+
 form,.paperInfo{
     padding: 0.3rem;
     background-color: #fafafa;
@@ -121,6 +122,11 @@ form hr {
 }
 /* responsive desgin */
 @media screen and (min-width: 800px){
+    form {
+        grid-template-columns: auto 1fr;
+        grid-gap: 16px;
+      }
+
     .paperReviewCont .button{
         max-width: auto;
         align-self: center;

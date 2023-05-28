@@ -28,7 +28,10 @@
         "isPresenter": false
       }
     ],
-    "reviewers": [6, 5],
+    "reviewers": [
+      6,
+      5
+    ],
     "abstract": "Do you think you're living an ordinary life? You are so mistaken it's difficult to even explain. The mere fact that you exist makes you extraordinary. The odds of you existing are less than winning the lottery, but here you are. Are you going to let this extraordinary opportunity pass?",
     "paperURL": "/papers/sample.pdf",
     "isPresented": true,
@@ -39,6 +42,13 @@
         "contribution": 3,
         "weakness": "Citations are old.",
         "strength": "Inovative."
+      },
+      {
+        "userID": 13,
+        "overallRating": "0",
+        "contribution": "4",
+        "weakness": "Very good                            ",
+        "strength": "Excellent"
       }
     ]
   },
@@ -71,7 +81,10 @@
         "isPresenter": false
       }
     ],
-    "reviewers": [3, 5],
+    "reviewers": [
+      3,
+      5
+    ],
     "abstract": "He had done everything right. There had been no mistakes throughout the entire process. It had been perfection and he knew it without a doubt, but the results still stared back at him with the fact that he had lost.",
     "paperURL": "/papers/sample.pdf",
     "isPresented": true,
@@ -121,7 +134,10 @@
         "isPresenter": false
       }
     ],
-    "reviewers": [4, 9],
+    "reviewers": [
+      4,
+      9
+    ],
     "abstract": "As technologically gifted students apply their abilities to computer science, they naturally flow through the talent development stages of potential, competency, and expertise. Processes that\n    have always been\n    important for gifted\n    students to learn as they\n    develop potential are\n    embedded in learning\n    code, which engages the\n    beginning programmer in\n    rich and complex authentic\n    projects (Housand et al.,2017).",
     "paperURL": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
     "isPresented": false,
@@ -164,7 +180,10 @@
         "isPresenter": false
       }
     ],
-    "reviewers": [9, 8],
+    "reviewers": [
+      9,
+      8
+    ],
     "abstract": "The wolves stopped in their tracks, sizing up the mother and her cubs. It had been over a week since their last meal and they were getting desperate. The cubs would make a good meal, but there were high risks taking on the mother Grizzly. A decision had to be made and the wrong choice could signal the end of the pack.",
     "paperURL": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
     "isPresented": true,
@@ -198,8 +217,165 @@
       }
     ],
     "paperURL": "/papers/paper5.pdf",
-    "reviewers": [9, 13],
+    "reviewers": [
+      9,
+      13
+    ],
+    "isPresented": false,
+    "reviews": [
+      {
+        "userID": 13,
+        "overallRating": "1",
+        "contribution": "4",
+        "weakness": "Test 2                            ",
+        "strength": "Test 1"
+      }
+    ]
+  },
+  {
+    "title": "Test",
+    "abstract": "Test",
+    "authors": [
+      {
+        "firstName": "Abdelkarim",
+        "lastName": "Erradi",
+        "email": "erradi@live.com",
+        "affiliation": "QU"
+      }
+    ],
+    "paperURL": "/papers/1685221443081_Invoice-SINV707951.pdf",
+    "id": 1,
+    "reviewers": [
+      6,
+      12
+    ],
     "isPresented": false,
     "reviews": []
+  },
+  {
+    "title": "Test paper",
+    "abstract": "Test me",
+    "authors": [
+      {
+        "firstName": {},
+        "lastName": "Erradi",
+        "email": "erradi@live.com",
+        "affiliation": "QU"
+      },
+      {
+        "firstName": {},
+        "lastName": "Keen",
+        "email": "um@outlook.com",
+        "affiliation": "CMU"
+      }
+    ],
+    "paperURL": "/papers/1685227143472_Invoice-SINV707951.pdf",
+    "id": 1,
+    "reviewers": [
+      13,
+      6
+    ],
+    "isPresented": false,
+    "reviews": []
+  },
+  {
+    "title": "A",
+    "abstract": "B",
+    "authors": [
+      {
+        "firstName": "Abdelkarim",
+        "lastName": "Erradi",
+        "email": "erradi@live.com",
+        "affiliation": "QU"
+      },
+      {
+        "firstName": "Sara",
+        "lastName": "Keen",
+        "email": "umkhadija@outlook.com",
+        "affiliation": "CMU"
+      }
+    ],
+    "paperURL": "/papers/1685231157412_Escane11.pdf",
+    "id": 1
+  },
+  {
+    "title": "A",
+    "abstract": "B",
+    "authors": [
+      {
+        "firstName": "Abdelkarim",
+        "lastName": "Erradi",
+        "email": "erradi@live.com",
+        "affiliation": "QU"
+      }
+    ],
+    "paperURL": "/papers/1685231371391_Autonomous_Response_Agent_for_CPS_Attacks__DRL_IRS.pdf",
+    "id": 6
+  },
+  {
+    "title": "A",
+    "abstract": "Test",
+    "authors": [
+      {
+        "firstName": "Abdelkarim",
+        "lastName": "Erradi",
+        "email": "erradi@live.com",
+        "affiliation": "QU",
+        "isPresenter": true
+      },
+      {
+        "firstName": "Mariam",
+        "lastName": "Erradi",
+        "email": "umkhadija@outlook.com",
+        "affiliation": "CMU",
+        "isPresenter": false
+      }
+    ],
+    "paperURL": "/papers/1685232885065_Autonomous_Response_Agent_for_CPS_Attacks__DRL_IRS.pdf",
+    "id": 7
+  },
+  {
+    "title": "A",
+    "abstract": "ABC",
+    "authors": [
+      {
+        "firstName": "Abdelkarim",
+        "lastName": "Erradi",
+        "email": "erradi@live.com",
+        "affiliation": "QU",
+        "isPresenter": false
+      },
+      {
+        "firstName": "Mariam",
+        "lastName": "Erradi",
+        "email": "umkhadija@outlook.com",
+        "affiliation": "CMU",
+        "isPresenter": true
+      }
+    ],
+    "paperURL": "/papers/1685233383709_Autonomous_Response_Agent_for_CPS_Attacks_(DRL-IRS).pdf",
+    "id": 8
+  },
+  {
+    "title": "a",
+    "abstract": "b",
+    "authors": [
+      {
+        "firstName": "Mariam",
+        "lastName": "Erradi",
+        "email": "erradi@live.com",
+        "affiliation": "QU",
+        "isPresenter": false
+      },
+      {
+        "firstName": "Sara",
+        "lastName": "Keen",
+        "email": "umkhadija@outlook.com",
+        "affiliation": "CMU",
+        "isPresenter": true
+      }
+    ],
+    "paperURL": "/papers/1685233735254_Invoice-SINV707951.pdf",
+    "id": 9
   }
 ]

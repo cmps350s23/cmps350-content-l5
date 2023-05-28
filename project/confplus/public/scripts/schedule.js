@@ -1,48 +1,46 @@
-document.addEventListener("DOMContentLoaded", async () => {
-  await fillConfDatesDD();
-  const schedule = await getSchedule();
-  //console.dir(schedule);
-  displaySchedule(schedule);
-});
+await fillAffiliationDD()
+const schedule = await getSchedule()
+//console.dir(schedule);
+displaySchedule(schedule)
 
-async function getConfDates() {
-  const res = await fetch("/api/confdates");
-  return await res.json();
+async function getInstitutions() {
+  const res = await fetch("/api/confdates")
+  return await res.json()
 }
 
 async function getSchedule(date) {
-  const queryString = date ? `?date=${date}` : "";
-  const res = await fetch(`/api/schedule${queryString}`);
-  return await res.json();
+  const queryString = date ? `?date=${date}` : ""
+  const res = await fetch(`/api/schedule${queryString}`)
+  return await res.json()
 }
 
-async function fillConfDatesDD() {
+async function fillAffiliationDD() {
   //Populate date filter dropdown
-  const confDatesDD = document.querySelector("#confDatesDD");
-  const confDates = await getConfDates();
+  const confDatesDD = document.querySelector("#confDatesDD")
+  const confDates = await getInstitutions()
   confDates.forEach((d) => {
-    const option = document.createElement("option");
-    option.value = d;
-    option.text = d;
-    confDatesDD.appendChild(option);
-  });
+    const option = document.createElement("option")
+    option.value = d
+    option.text = d
+    confDatesDD.appendChild(option)
+  })
 
   //Add event listener to dropdown
-  confDatesDD.addEventListener("change", (e) => onDateChange(e.target.value));
+  confDatesDD.addEventListener("change", (e) => onDateChange(e.target.value))
 }
 
 async function onDateChange(date) {
-  const schedule = await getSchedule(date);
-  console.dir(schedule);
-  displaySchedule(schedule);
+  const schedule = await getSchedule(date)
+  console.dir(schedule)
+  displaySchedule(schedule)
 }
 
 function displaySchedule(schedule) {
-  const sessionsDiv = document.querySelector("#sessionsList");
+  const sessionsDiv = document.querySelector("#sessionsList")
   //Display schedule details
   if (schedule.length == 0) {
-    sessionsDiv.innerHTML = `<p class="unavailable">No Sessions found.</p>`;
-    return;
+    sessionsDiv.innerHTML = `<p class="unavailable">No Sessions found.</p>`
+    return
   }
   sessionsDiv.innerHTML = schedule
     .map(
@@ -59,13 +57,13 @@ function displaySchedule(schedule) {
             </div>
         </div>`
     )
-    .join("<hr>");
+    .join("<hr>")
 }
 
 function presentationToHTML(presentations) {
   //Convert presentation objects to HTML cards
   if (presentations.length == 0) {
-    return `<p class="unavailable">No Presentations found.</p>`;
+    return `<p class="unavailable">No Presentations found.</p>`
   }
   return presentations
     .map(
@@ -78,5 +76,5 @@ function presentationToHTML(presentations) {
             <p class="presenter">Presenter: ${p.presenter}</p>
         </div>`
     )
-    .join("");
+    .join("")
 }

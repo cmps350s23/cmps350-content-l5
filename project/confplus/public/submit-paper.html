@@ -1,77 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
     <title>Submit Paper</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/smallerLogo.png">
-    <link rel="stylesheet" href="style/base-style.css">
-    <link rel="stylesheet" href="style/forms-style.css">
-</head>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/images/smallerLogo.png"
+    />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <!--     <link rel="stylesheet" href="styles/forms-style.css" /> -->
+  </head>
 
-<body>
+  <body>
     <nav>
-        <img src="images/logo.png" alt="">
-        <ul>
-            <li><a href="schedule.html">Log Out</a></li>
-        </ul>
+      <img src="images/logo.png" alt="" />
+      <ul>
+        <li><a href="index.html">Log Out</a></li>
+      </ul>
     </nav>
     <header><h1>Submit a Paper</h1></header>
     <main class="formsMain">
-        <form action="#" id="submitPaperForm">
-            <fieldset>
-                <label for="title">Paper title:</label>
-                <input type="text" placeholder="Enter the paper title" id="title" name="title" class="textinput" required>
-                <br>
-                <div class="textarea">
-                    <label for="abstract">Abstract:</label>
-                    <textarea name="abstract" id="abstract" cols="10" rows="5" class="textinput" required></textarea>
-                </div>
-                <br>
-                <label for="authors">Author(s):</label>
-                <div class="authorsList" id="authorsList">
-                    <div class="authorCard card">
-                        <div>
-                            <label for="firstName">First name:</label>
-                            <input type="text" placeholder="Enter the author's first name" id="firstName" name="firstName" class="textinput" required>
-                        </div>
-                        <div>
-                            <label for="lanme">Last name:</label>
-                            <input type="text" placeholder="Enter the author's last name" id="lastName" name="lastName" class="textinput" required>
-                            
-                        </div>
-                        <div>
-                            <label for="authoremail">E-mail: &#8205;</label>
-                            <input type="email" placeholder="Enter the author's email address" id="authoremail" name="authoremail" class="textinput" required>
-                            
-                        </div>
-                        <div>
-                            <label for="affiliation">Affiliation</label>
-                            <input type="text" placeholder="Enter organization's name" id="affiliation" name="affiliation" class="textinput" required>
-                            
-                        </div>
-                    </div>
-                </div>
-                <div class="authorBtns">
-                    <button type="button" class="button" onclick="addAuthorFormFields()">+</button>
-                    <button type="button" class="button"onclick="removeAuthorFormFields()">-</button>
-                </div>
-            </fieldset>
+      <form action="#" onsubmit="submitPaper()">
+        <label for="title">Paper title:</label>
+        <input type="text" id="title" name="title" required />
+        <label for="abstract">Abstract:</label>
+        <textarea
+          name="abstract"
+          id="abstract"
+          cols="10"
+          rows="5"
+          required
+        ></textarea>
 
-            <fieldset>
-                <label for="paperPDF">Upload your paper as PDF:</label>
-                <input type="file" name="paperPDF" id="paperPDF">
-            </fieldset>
-            <input type="submit" value="Submit" class="button">
-        </form>
+        <label for="authors">Author(s):</label>
+        <div class="authorsList" id="authorsList">
+          <div class="authorCard card">
+            <div>
+              <label>
+                First name:
+                <input type="text" name="firstName" required />
+              </label>
+            </div>
+            <div>
+              <label
+                >Last name:
+                <input type="text" name="lastName" required />
+              </label>
+            </div>
+            <div>
+              <label
+                >E-mail:
+                <input type="email" name="email" required />
+              </label>
+            </div>
+            <div>
+              <label
+                >Affiliation
+                <input type="text" name="affiliation" required />
+              </label>
+            </div>
+            <div>
+              <label>
+                <input
+                  type="checkbox"
+                  name="isPresenter"
+                  onChange="onIsPresenterChange()"
+                />
+                Presenting Author
+              </label>
+            </div>
+            <button type="button" class="button" onclick="onRemoveAuthor()">
+              -
+            </button>
+          </div>
+        </div>
+        <div>
+          <button type="button" class="button" onclick="onAddAuthor()">
+            Add Author
+          </button>
+        </div>
+        <label for="paperPDF">Paper PDF:</label>
+        <input type="file" name="paperPDF" id="paperPDF" />
+        <input type="submit" value="Submit" class="button" />
+      </form>
     </main>
     <footer>
-        <hr>
-        <p class="footer">ConfPlus © 2023</p>
+      <hr />
+      <p class="footer">ConfPlus © 2023</p>
     </footer>
-    <script src="scripts/paperSubApp.js" type="module"></script>
-</body>
-
+    <script src="scripts/submit-paper.js"></script>
+  </body>
 </html>

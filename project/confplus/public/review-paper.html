@@ -1,44 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/base-style.css">
-    <link rel="stylesheet" href="style/forms-style.css">
+  <head>
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/forms-style.css" />
     <title>Review Paper</title>
-</head>
+  </head>
 
-<body class="review">
+  <body class="review">
+    <nav>
+      <img src="images/logo.png" alt="" />
+      <ul>
+        <li><a href="index.html">Log Out</a></li>
+      </ul>
+    </nav>
+    <header><h1>Review Research Paper</h1></header>
+    <main class="reviewMain formsMain">
+      <div class="paperInfo">
+        <label for="researchPaper">Select a paper to review:</label>
+        <select
+          name="paperId"
+          id="researchPapers"
+          required
+          onload="loadReviewedPapers()"
+          aria-placeholder="Choose Paper"
+        ></select>
+      </div>
 
-        
-        <nav>
-            <img src="images/logo.png" alt="">
-            <ul>
-                <li><a href="schedule.html">Log Out</a></li>
-            </ul>
-        </nav>
-       <header><h1>Review Research Paper</h1></header>
-        <main class="reviewMain formsMain">
-            
-            <div class="paperInfo">
-                <label for="researchPaper">Please select a Research paper to review:</label>
-                <select name="paperId" id="researchPapers" required onload="loadReviewedPapers()" aria-placeholder="Choose Paper">
-                    <!-- <option value="" disabled selected>Select Paper</option> -->
-                </select>
-            </div>
-
-            <div id="messageArea" class="hidden">
-            </div>
-            <div id="variablePaperArea" class="resetStyle paperReviewCont">
-            </div>
-        </main>
-        <footer>
-            <hr>
-            <p class="footer">ConfPlus © 2023</p>
-        </footer>
-<script src="scripts/reviewApp.js" type="module"></script>
-</body>
-
+      <div id="messageArea" class="hidden"></div>
+      <div id="variablePaperArea" class="resetStyle paperReviewCont"></div>
+    </main>
+    <footer>
+      <hr />
+      <p class="footer">ConfPlus © 2023</p>
+    </footer>
+    <script src="scripts/review-paper.js"></script>
+  </body>
 </html>

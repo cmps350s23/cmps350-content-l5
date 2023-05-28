@@ -4,7 +4,7 @@
     "firstName": "John",
     "lastName": "Doe",
     "email": "johndoe@organizer.com",
-    "password": "password123",
+    "password": "pass123",
     "role": "organizer"
   },
   {
@@ -12,7 +12,7 @@
     "firstName": "Jane",
     "lastName": "Doe",
     "email": "janedoe@organizer.com",
-    "password": "password123",
+    "password": "pass123",
     "role": "organizer"
   },
   {
@@ -20,7 +20,7 @@
     "firstName": "Bob",
     "lastName": "Smith",
     "email": "bobsmith@reviewer.com",
-    "password": "password123",
+    "password": "pass123",
     "role": "reviewer"
   },
   {
@@ -28,7 +28,7 @@
     "firstName": "Alice",
     "lastName": "Johnson",
     "email": "alicejohnson@reviewer.com",
-    "password": "password123",
+    "password": "pass123",
     "role": "reviewer"
   },
   {
@@ -36,7 +36,7 @@
     "firstName": "David",
     "lastName": "Brown",
     "email": "davidbrown@reviewer.com",
-    "password": "password123",
+    "password": "pass123",
     "role": "reviewer"
   },
   {
@@ -44,7 +44,7 @@
     "firstName": "Emily",
     "lastName": "Davis",
     "email": "emilydavis@reviewer.com",
-    "password": "password123",
+    "password": "pass123",
     "role": "reviewer"
   },
   {
@@ -52,7 +52,7 @@
     "firstName": "Oliver",
     "lastName": "Martin",
     "email": "olivermartin@reviewer.com",
-    "password": "password123",
+    "password": "pass123",
     "role": "reviewer"
   },
   {
@@ -60,7 +60,7 @@
     "firstName": "Sophie",
     "lastName": "Miller",
     "email": "sophiemiller@reviewer.com",
-    "password": "password123",
+    "password": "pass123",
     "role": "reviewer"
   },
   {
@@ -68,7 +68,7 @@
     "firstName": "Luke",
     "lastName": "Harris",
     "email": "lukeharris@reviewer.com",
-    "password": "password123",
+    "password": "pass123",
     "role": "reviewer"
   },
   {
@@ -76,7 +76,7 @@
     "firstName": "Mia",
     "lastName": "Wilson",
     "email": "miawilson@reviewer.com",
-    "password": "password123",
+    "password": "pass123",
     "role": "reviewer"
   },
   {
@@ -84,7 +84,7 @@
     "firstName": "Noah",
     "lastName": "Thomas",
     "email": "noahthomas@reviewer.com",
-    "password": "password123",
+    "password": "pass123",
     "role": "reviewer"
   },
   {
@@ -92,7 +92,7 @@
     "firstName": "Ava",
     "lastName": "Lee",
     "email": "avalee@reviewer.com",
-    "password": "password123",
+    "password": "pass123",
     "role": "reviewer"
   },
   {
@@ -100,7 +100,7 @@
     "firstName": "Jacob",
     "lastName": "Clark",
     "email": "jacobclark@reviewer.com",
-    "password": "password123",
+    "password": "pass123",
     "role": "reviewer"
   },
   {
@@ -108,7 +108,7 @@
     "firstName": "Emma",
     "lastName": "Walker",
     "email": "emmawalker@author.com",
-    "password": "password123",
+    "password": "pass123",
     "role": "author"
   },
   {
@@ -116,7 +116,7 @@
     "firstName": "Ethan",
     "lastName": "Turner",
     "email": "ethanturner@author.com",
-    "password": "password123",
+    "password": "pass123",
     "role": "author"
   },
   {
@@ -124,7 +124,7 @@
     "firstName": "Chloe",
     "lastName": "Parker",
     "email": "chloeparker@author.com",
-    "password": "password123",
+    "password": "pass123",
     "role": "author"
   },
   {
@@ -132,7 +132,7 @@
     "firstName": "William",
     "lastName": "Hall",
     "email": "williamhall@author.com",
-    "password": "password123",
+    "password": "pass123",
     "role": "author"
   },
   {
@@ -140,7 +140,7 @@
     "firstName": "Grace",
     "lastName": "Garcia",
     "email": "gracegarcia@author.com",
-    "password": "password123",
+    "password": "pass123",
     "role": "author"
   },
   {
@@ -148,7 +148,7 @@
     "firstName": "Daniel",
     "lastName": "Young",
     "email": "danielyoung@author.com",
-    "password": "password123",
+    "password": "pass123",
     "role": "author"
   },
   {
@@ -156,7 +156,7 @@
     "firstName": "Zoe",
     "lastName": "Allen",
     "email": "zoeallen@author.com",
-    "password": "password123",
+    "password": "pass123",
     "role": "author"
   }
 ]

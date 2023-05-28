@@ -1,8 +1,6 @@
-import fs from "fs-extra";
-import path from "path";
+import { readJSON } from "@/app/lib/utils"
 
 export async function GET(request) {
-  const pathh = path.join(process.cwd(), "/data/institutions.json");
-  const institutions = await fs.readJSON(pathh);
-  return Response.json(institutions);
+  const institutions = await readJSON("data/institutions.json")
+  return Response.json(institutions)
 }
