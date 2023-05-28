@@ -1,32 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <title>Login</title>
-    <link rel="icon" type="image/png" sizes="32x32" href="/images/smallerLogo.png">
-    <link rel="stylesheet" href="styles/styles.css">
-</head>
-<body class="Login">
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/images/smallerLogo.png"
+    />
+    <link rel="stylesheet" href="styles/styles.css" />
+  </head>
+  <body class="Login">
     <nav>
-        <img src="images/logo.png" alt="">
-        <ul>
-            <li><a href="index.html">Home</a></li>
-        </ul>
+      <img src="images/logo.png" alt="" />
+      <ul>
+        <li><a href="index.html">Home</a></li>
+      </ul>
     </nav>
     <header><h1>Login</h1></header>
-    <main class="formsMain">
-        <form action="#" class="loginForm" onsubmit="onLogin()">
-            <label for="email">Email</label>
-            <input type="email" id="email" class="textinput">
-            <label for="password">Password</label>
-            <input type="password" id="password" class="textinput">
-            <p class="error hidden" id="error"></p>
-            <input type="submit" value="Login" class="button">
-        </form>
+    <main>
+      <form action="#" onsubmit="onLogin()">
+        <label for="email">Email</label>
+        <input type="email" id="email" />
+        <label for="password">Password</label>
+        <input type="password" id="password" />
+        <p class="error hidden" id="error"></p>
+        <input type="submit" value="Login" class="button" />
+      </form>
     </main>
     <footer>
-        <hr>
-        <p class="footer">ConfPlus © 2023</p>
+      <hr />
+      <p class="footer">ConfPlus © 2023</p>
     </footer>
     <script src="scripts/login.js"></script>
-</body>
+  </body>
 </html>

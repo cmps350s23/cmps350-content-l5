@@ -1,4 +1,4 @@
-import { addReview } from "../../papers-repo"
+import { addReview, updateReview } from "../../papers-repo"
 
 // export async function GET(request, { params }){//get reviews of a paper
 //     const { paperId } = params;

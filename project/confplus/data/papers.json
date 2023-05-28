@@ -37,18 +37,18 @@
     "isPresented": true,
     "reviews": [
       {
-        "userID": 6,
+        "reviewerId": 6,
         "overallRating": 2,
         "contribution": 3,
         "weakness": "Citations are old.",
         "strength": "Inovative."
       },
       {
-        "userID": 13,
-        "overallRating": "0",
-        "contribution": "4",
-        "weakness": "Very good                            ",
-        "strength": "Excellent"
+        "reviewerId": 13,
+        "overallRating": "-2",
+        "contribution": "1",
+        "strength": "Bad 1",
+        "weakness": "Bad 2"
       }
     ]
   },
@@ -90,14 +90,14 @@
     "isPresented": true,
     "reviews": [
       {
-        "userID": 3,
+        "reviewerId": 3,
         "overallRating": 2,
         "contribution": 3,
         "weakness": "Not bad",
         "strength": "Good"
       },
       {
-        "userID": 5,
+        "reviewerId": 5,
         "overallRating": 2,
         "contribution": 4,
         "weakness": "Not bad",
@@ -143,7 +143,7 @@
     "isPresented": false,
     "reviews": [
       {
-        "userID": 9,
+        "reviewerId": 9,
         "overallRating": "-1",
         "contribution": "5",
         "weakness": "Yupp",
@@ -189,14 +189,14 @@
     "isPresented": true,
     "reviews": [
       {
-        "userID": 8,
+        "reviewerId": 8,
         "overallRating": 2,
         "contribution": 3,
         "weakness": "None",
         "strength": "Amazing"
       },
       {
-        "userID": 9,
+        "reviewerId": 9,
         "overallRating": "2",
         "contribution": "5",
         "weakness": "Some sections poorly written",
@@ -224,11 +224,11 @@
     "isPresented": false,
     "reviews": [
       {
-        "userID": 13,
-        "overallRating": "1",
-        "contribution": "4",
-        "weakness": "Test 2                            ",
-        "strength": "Test 1"
+        "reviewerId": 13,
+        "overallRating": "2",
+        "contribution": "5",
+        "strength": "Best paper",
+        "weakness": "Cool"
       }
     ]
   },

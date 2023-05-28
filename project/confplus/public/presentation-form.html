@@ -1,0 +1,25 @@
+<form action="#" id="add-presentation-form" class="center">
+  <h1>Set Presentation</h1>
+  <hr />
+  <input type="hidden" name="sessionId" id="sessionId" value="" />
+  <label for="researchPaper">Please select a Research paper to review:</label>
+  <select
+    name="paperId"
+    id="researchPapers"
+    required
+    onload="loadReviewedPapers()"
+    aria-placeholder="Choose Paper"
+  >
+    <!-- <option value="" disabled selected>Select Paper</option> -->
+  </select>
+
+  <div>
+    <label for="startTime">Presentation Starts: </label>
+    <input type="time" name="startTime" id="startTime" required />
+  </div>
+  <div>
+    <label for="endTime">Presentation Ends: </label>
+    <input type="time" id="endTime" name="endTime" required />
+  </div>
+  <input type="submit" value="Create Presentation" class="button" />
+</form>

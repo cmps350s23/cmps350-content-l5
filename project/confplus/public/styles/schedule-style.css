@@ -59,12 +59,12 @@ main:has(#sessionsList){
     padding: 1rem;
 }
 
-.session-card:has(.manageBtns > .button:hover),.session-card:has(> button:hover){
+.session-card:has(.action-buttons > .button:hover),.session-card:has(> button:hover){
     background-color: #67637e05;
     border-radius: 1rem;
 }
 
-.manageBtns button{
+.action-buttons button{
     min-width: 7.25rem;
 }
 

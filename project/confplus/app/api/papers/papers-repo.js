@@ -49,13 +49,14 @@ export async function getReviews(paperId) {
 
 export async function addReview(paperId, review) {
   const paper = await getPaperById(paperId)
+  if (!paper.reviews) paper.reviews = []
   paper.reviews.push(review)
   await updatePaper(paper)
 }
 
 export async function updateReview(paperId, review) {
   const paper = await getPaperById(paperId)
-  const index = paper.reviews.findIndex((r) => r.userID == review.userID)
+  const index = paper.reviews.findIndex((r) => r.userID == review.reviewerId)
   paper.reviews[index] = review
   await updatePaper(paper)
 }

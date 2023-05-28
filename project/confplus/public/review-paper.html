@@ -13,21 +13,120 @@
         <li><a href="index.html">Log Out</a></li>
       </ul>
     </nav>
-    <header><h1>Review Research Paper</h1></header>
-    <main class="reviewMain formsMain">
+    <header>
+      <h1>Review Paper</h1>
+    </header>
+    <main>
       <div class="paperInfo">
-        <label for="researchPaper">Select a paper to review:</label>
+        <label for="papersDD">Select a paper to review:</label>
         <select
           name="paperId"
-          id="researchPapers"
+          id="papersDD"
           required
-          onload="loadReviewedPapers()"
+          onchange="onPaperSelected()"
           aria-placeholder="Choose Paper"
         ></select>
       </div>
 
-      <div id="messageArea" class="hidden"></div>
-      <div id="variablePaperArea" class="resetStyle paperReviewCont"></div>
+      <div class="paperInfo">
+        <div class="resetStyle">
+          <h4>Paper Information</h4>
+        </div>
+        <hr />
+        <p>
+          Title: <span id="paperTitle" class="title">${ paper.title }</span>
+        </p>
+        <p>Author(s):</p>
+        <div id="authorsList" class="authorsList"></div>
+
+        <details>
+          <summary>Abstract</summary>
+          <p id="paperAbstract"></p>
+        </details>
+        <a id="paperURL" href="#" target="_blank" class="button">View PDF</a>
+      </div>
+      <form action="#" id="reviewForm" onsubmit="onSubmit()">
+        <h4>Paper Review</h4>
+        <hr />
+        <fieldset>
+          <div>
+            <p>Overall Rating</p>
+            <label>
+              <input type="radio" name="overallRating" value="2" required />
+              Strongly accept
+            </label>
+            <br />
+            <label>
+              <input type="radio" name="overallRating" value="1" />
+              Accept
+            </label>
+            <br />
+            <label>
+              <input type="radio" name="overallRating" value="0" />
+              Borderline
+            </label>
+            <br />
+            <label>
+              <input type="radio" name="overallRating" value="-1" />
+              Reject
+            </label>
+            <br />
+            <label>
+              <input type="radio" name="overallRating" value="-2" />
+              Strongly reject
+            </label>
+            <br />
+          </div>
+          <br />
+          <div>
+            <p>Contribution</p>
+            <label>
+              <input type="radio" name="contribution" value="5" required />
+              A major and significant contribution
+            </label>
+            <br />
+            <label>
+              <input type="radio" name="contribution" value="4" />
+              A clear contribution
+            </label>
+            <br />
+            <label>
+              <input type="radio" name="contribution" value="3" />
+              A minor contribution
+            </label>
+            <br />
+            <label>
+              <input type="radio" name="contribution" value="2" />
+              No obvious contribution
+            </label>
+            <br />
+            <label>
+              <input type="radio" name="contribution" value="1" />
+              No contribution at all
+            </label>
+            <br />
+          </div>
+          <div class="textarea">
+            <label for="strength">Paper Strengths: </label>
+            <textarea
+              id="strength"
+              name="strength"
+              rows="3"
+              required
+            ></textarea>
+          </div>
+          <div class="textarea">
+            <label for="weakness">Paper Weakness: </label>
+            <textarea
+              id="weakness"
+              name="weakness"
+              rows="3"
+              required
+            ></textarea>
+          </div>
+        </fieldset>
+        <input type="submit" value="Submit" class="button" />
+      </form>
     </main>
     <footer>
       <hr />

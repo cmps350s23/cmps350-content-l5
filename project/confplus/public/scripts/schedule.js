@@ -37,12 +37,15 @@ async function onDateChange(date) {
 
 function displaySchedule(schedule) {
   const sessionsDiv = document.querySelector("#sessionsList")
-  //Display schedule details
   if (schedule.length == 0) {
-    sessionsDiv.innerHTML = `<p class="unavailable">No Sessions found.</p>`
+    sessionsDiv.innerHTML = '<p class="unavailable">No Sessions found.</p>'
     return
   }
-  sessionsDiv.innerHTML = schedule
+  sessionsDiv.innerHTML = scheduleToHTML(schedule)
+}
+
+function scheduleToHTML(schedule) {
+  return schedule
     .map(
       (session) => `<div class="session-card">
             <div class="session-header">
@@ -52,18 +55,16 @@ function displaySchedule(schedule) {
                     <p><i class="fa fa-map-marker"></i> ${session.location}</p>
                 </div>
             </div>
-            <div class="presentList" id="presentList"> 
+            <div> 
                 ${presentationToHTML(session.presentations)}
             </div>
         </div>`
     )
     .join("<hr>")
 }
-
 function presentationToHTML(presentations) {
-  //Convert presentation objects to HTML cards
   if (presentations.length == 0) {
-    return `<p class="unavailable">No Presentations found.</p>`
+    return '<p class="unavailable">No Presentations found.</p>'
   }
   return presentations
     .map(

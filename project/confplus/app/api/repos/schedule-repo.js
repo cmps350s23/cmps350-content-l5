@@ -1,4 +1,4 @@
-import { getPaperById, papersRepo } from "@/app/api/papers/papers-repo"
+import { getPaperById } from "@/app/api/papers/papers-repo"
 
 import { readJSON, writeJSON } from "@/app/lib/utils"
 
@@ -79,7 +79,7 @@ class SchedRepo {
         : 1
     sess.presentations.push(presentation)
     this.updateSession(sess)
-    await papersRepo.togglePresented(presentation.paperId)
+    //await papersRepo.togglePresented(presentation.paperId)
     return presentation
   }
 
@@ -119,9 +119,9 @@ class SchedRepo {
     let sched = await this.getSchedule()
     sched = sched.filter((sess) => sess.id != id)
     await writeJSON(this.filePath, sched)
-    for (let press of await this.getPresentations(id)) {
+    /*     for (let press of await this.getPresentations(id)) {
       await papersRepo.togglePresented(press.paperId)
-    }
+    } */
     return { message: `Session with id : ${id} deleted` }
   }
 
@@ -132,7 +132,7 @@ class SchedRepo {
       (press) => press.id != presId
     )
     this.updateSession(sess)
-    await papersRepo.togglePresented(press.paperId)
+    //await papersRepo.togglePresented(press.paperId)
     return { message: `Presentation with id : ${presId} deleted` }
   }
 
