@@ -142,10 +142,10 @@
     "reviews": [
       {
         "reviewerId": 9,
-        "overallRating": "-1",
-        "contribution": "5",
-        "weakness": "Yupp",
-        "strength": "Cool!"
+        "overallRating": "0",
+        "contribution": "2",
+        "strength": "Ok but cool to read!",
+        "weakness": "Full of false claims!"
       }
     ]
   },
