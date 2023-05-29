@@ -1,6 +1,7 @@
 const paperOptions = document.querySelector("#paperOptions")
 let isNewReview = false //Flag to check if review is new or existing
 
+let papers = []
 let user
 document.addEventListener("DOMContentLoaded", async () => {
   //Current user
@@ -16,7 +17,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 async function onPaperSelected() {
   const paperId = paperOptions.value
-  const paper = await getPaper(paperId)
+  const paper = getPaper(paperId)
   const review = paper.reviews?.find((review) => review.reviewerId == user.id)
   console.log("onPaperSelected - review:", paper.reviews, user.id)
 
@@ -74,9 +75,10 @@ async function getPaperByReviewerId(id) {
   return await response.json()
 }
 
-async function getPaper(id) {
-  const response = await fetch(`/api/papers/${id}`)
-  return await response.json()
+function getPaper(id) {
+  return papers.find((p) => p.id == id)
+  //const response = await fetch(`/api/papers/${id}`)
+  //return await response.json()
 }
 
 async function getUserByEmail(email) {
@@ -87,6 +89,16 @@ async function getUserByEmail(email) {
 }
 
 async function submitReview(paperId, review, isNewReview = false) {
+  // Save review on the client side
+  const paper = getPaper(paperId)
+  if (isNewReview) {
+    paper.reviews.push(review)
+  } else {
+    const index = paper.reviews?.findIndex((r) => review.reviewerId == user.id)
+    paper.reviews[index] = review
+  }
+
+  // Save review on the server side
   const response = await fetch(`/api/papers/${paperId}/reviews`, {
     method: isNewReview ? "POST" : "PUT",
     headers: {
@@ -119,14 +131,22 @@ function authorsToHTML(authors) {
 }
 
 async function loadPaperOptions() {
-  const papers = await getPaperByReviewerId(user.id)
-  const html = papers
-    ?.map((p) => `<option value="${p.id}">${p.title}</option>`)
-    .join("")
-
-  if (!html) {
-    html = `<option value="" disabled selected>No Papers to Review</option>`
-  }
+  papers = await getPaperByReviewerId(user.id)
+  //console.log("loadPaperOptions - papers:", papers)
   const paperOptions = document.querySelector("#paperOptions")
-  paperOptions.innerHTML = html
+
+  if (!papers || papers.length == 0) {
+    const option = document.createElement("option")
+    option.value = ""
+    option.text = "No Papers to Review"
+    option.disabled = true
+    paperOptions.appendChild(option)
+    return
+  }
+  papers.forEach((paper) => {
+    const option = document.createElement("option")
+    option.value = paper.id
+    option.text = paper.title
+    paperOptions.appendChild(option)
+  })
 }

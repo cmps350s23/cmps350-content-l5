@@ -28,7 +28,10 @@
         "isPresenter": false
       }
     ],
-    "reviewers": [6, 5],
+    "reviewers": [
+      6,
+      5
+    ],
     "abstract": "Do you think you're living an ordinary life? You are so mistaken it's difficult to even explain. The mere fact that you exist makes you extraordinary. The odds of you existing are less than winning the lottery, but here you are. Are you going to let this extraordinary opportunity pass?",
     "paperURL": "/papers/sample.pdf",
     "reviews": [
@@ -77,16 +80,19 @@
         "isPresenter": false
       }
     ],
-    "reviewers": [3, 5],
+    "reviewers": [
+      3,
+      5
+    ],
     "abstract": "He had done everything right. There had been no mistakes throughout the entire process. It had been perfection and he knew it without a doubt, but the results still stared back at him with the fact that he had lost.",
     "paperURL": "/papers/sample.pdf",
     "reviews": [
       {
         "reviewerId": 3,
-        "overallRating": 2,
-        "contribution": 3,
-        "weakness": "Not bad",
-        "strength": "Good"
+        "overallRating": "1",
+        "contribution": "4",
+        "strength": "Good paper",
+        "weakness": "Minor issues"
       },
       {
         "reviewerId": 5,
@@ -126,7 +132,10 @@
         "isPresenter": false
       }
     ],
-    "reviewers": [4, 9],
+    "reviewers": [
+      4,
+      9
+    ],
     "abstract": "As technologically gifted students apply their abilities to computer science, they naturally flow through the talent development stages of potential, competency, and expertise. Processes that\n    have always been\n    important for gifted\n    students to learn as they\n    develop potential are\n    embedded in learning\n    code, which engages the\n    beginning programmer in\n    rich and complex authentic\n    projects (Housand et al.,2017).",
     "paperURL": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
     "isPresented": false,
@@ -169,7 +178,10 @@
         "isPresenter": false
       }
     ],
-    "reviewers": [9, 8],
+    "reviewers": [
+      9,
+      8
+    ],
     "abstract": "The wolves stopped in their tracks, sizing up the mother and her cubs. It had been over a week since their last meal and they were getting desperate. The cubs would make a good meal, but there were high risks taking on the mother Grizzly. A decision had to be made and the wrong choice could signal the end of the pack.",
     "paperURL": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
     "reviews": [
@@ -204,7 +216,10 @@
       }
     ],
     "paperURL": "/papers/paper5.pdf",
-    "reviewers": [9, 13],
+    "reviewers": [
+      9,
+      13
+    ],
     "isPresented": false,
     "reviews": [
       {

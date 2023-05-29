@@ -50,8 +50,10 @@ function sumOverallEvaluation(paper) {
 export async function updatePaper(paper) {
   const papers = await getPapers()
   const index = papers.findIndex((p) => p.id == paper.id)
+  if (index == -1) throw new Error("Paper not found")
   papers[index] = paper
   await writeJSON(dataFilePath, papers)
+  console.log("updatePaper - paper: ", paper)
   return paper
 }
 
@@ -69,7 +71,10 @@ export async function addReview(paperId, review) {
 
 export async function updateReview(paperId, review) {
   const paper = await getPaperById(paperId)
-  const index = paper.reviews?.findIndex((r) => r.userID == review.reviewerId)
+  const index = paper.reviews?.findIndex(
+    (r) => r.reviewerId == review.reviewerId
+  )
+  if (index == -1) throw new Error("Review not found")
   paper.reviews[index] = review
   await updatePaper(paper)
 }
