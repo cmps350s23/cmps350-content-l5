@@ -53,7 +53,7 @@ export async function updatePaper(paper) {
   if (index == -1) throw new Error("Paper not found")
   papers[index] = paper
   await writeJSON(dataFilePath, papers)
-  console.log("updatePaper - paper: ", paper)
+  //console.log("updatePaper - paper: ", paper)
   return paper
 }
 
