@@ -29,7 +29,7 @@ async function onLogin() {
         window.location.href = "/review-paper.html"
         break
       case "organizer":
-        window.location.href = "/schedule-editor.html"
+        window.location.href = "/edit-schedule.html"
         break
 
       default:

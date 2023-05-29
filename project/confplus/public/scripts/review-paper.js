@@ -1,4 +1,4 @@
-const papersDD = document.querySelector("#papersDD")
+const paperOptions = document.querySelector("#paperOptions")
 let isNewReview = false //Flag to check if review is new or existing
 
 let user
@@ -10,12 +10,12 @@ document.addEventListener("DOMContentLoaded", async () => {
     user = await getUserByEmail("lukeharris@reviewer.com")
   }
 
-  await fillPapersDD()
+  await loadPaperOptions()
   await onPaperSelected()
 })
 
 async function onPaperSelected() {
-  const paperId = papersDD.value
+  const paperId = paperOptions.value
   const paper = await getPaper(paperId)
   const review = paper.reviews?.find((review) => review.reviewerId == user.id)
   console.log("onPaperSelected - review:", paper.reviews, user.id)
@@ -48,7 +48,7 @@ async function onPaperSelected() {
 async function onSubmit() {
   window.event.preventDefault()
   const form = document.forms[0]
-  const paperId = papersDD.value
+  const paperId = paperOptions.value
   const overallRating = form.querySelector(
     'input[name="overallRating"]:checked'
   ).value
@@ -118,7 +118,7 @@ function authorsToHTML(authors) {
     .join("")
 }
 
-async function fillPapersDD() {
+async function loadPaperOptions() {
   const papers = await getPaperByReviewerId(user.id)
   const html = papers
     ?.map((p) => `<option value="${p.id}">${p.title}</option>`)
@@ -127,6 +127,6 @@ async function fillPapersDD() {
   if (!html) {
     html = `<option value="" disabled selected>No Papers to Review</option>`
   }
-  const papersDD = document.querySelector("#papersDD")
-  papersDD.innerHTML = html
+  const paperOptions = document.querySelector("#paperOptions")
+  paperOptions.innerHTML = html
 }

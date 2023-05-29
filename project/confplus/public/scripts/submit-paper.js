@@ -1,3 +1,8 @@
+document.addEventListener("DOMContentLoaded", () => {
+  // Auto add first author
+  onAddAuthor()
+})
+
 async function submitPaper() {
   window.event.preventDefault()
   if (!isPresenterSelected()) {
@@ -46,10 +51,7 @@ async function addPaper(paper) {
 }
 
 async function uploadPDF() {
-  //const paperForm = document.querySelector("#submitPaperForm")
   const fileInput = document.querySelector("#paperPDF")
-
-  //const formData = new FormData(paperForm)
   const formData = new FormData()
   formData.append("file", fileInput.files[0])
 
@@ -104,9 +106,7 @@ function onAddAuthor() {
       Presenting Author
       </label>
     </div>
-    <button type="button" class="button" onclick="onRemoveAuthor()">
-      -
-    </button>
+    <button class="button delete-button" onclick="onRemoveAuthor()"><i class="fa fa-trash"></i></button>
   </div>
   </div>`
 

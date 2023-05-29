@@ -11,13 +11,13 @@
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="schedule.html">Schedule</a></li>
-        <li><a href="login.html">Log in</a></li>
+        <li id="auth-menu"></li>
       </ul>
     </nav>
 
     <header class="schedule-header">
       <h2>Confrence Schedule</h2>
-      <select id="confDatesDD">
+      <select id="conferenceDateOptions" onchange="onDateChange(this.value)">
         <option value="">All</option>
       </select>
     </header>
@@ -28,6 +28,6 @@
       <hr />
       <p class="footer">ConfPlus © 2023</p>
     </footer>
-    <script src="scripts/schedule.js" type="module"></script>
+    <script src="scripts/schedule.js"></script>
   </body>
 </html>

@@ -9,14 +9,13 @@
       href="/images/smallerLogo.png"
     />
     <link rel="stylesheet" href="styles/styles.css" />
-    <!--     <link rel="stylesheet" href="styles/forms-style.css" /> -->
   </head>
 
   <body>
     <nav>
       <img src="images/logo.png" alt="" />
       <ul>
-        <li><a href="index.html">Log Out</a></li>
+        <li><a href="index.html">Home</a></li>
       </ul>
     </nav>
     <header><h1>Submit a Paper</h1></header>
@@ -34,47 +33,7 @@
         ></textarea>
 
         <label for="authors">Author(s):</label>
-        <div class="authorsList" id="authorsList">
-          <div class="authorCard card">
-            <div>
-              <label>
-                First name:
-                <input type="text" name="firstName" required />
-              </label>
-            </div>
-            <div>
-              <label
-                >Last name:
-                <input type="text" name="lastName" required />
-              </label>
-            </div>
-            <div>
-              <label
-                >E-mail:
-                <input type="email" name="email" required />
-              </label>
-            </div>
-            <div>
-              <label
-                >Affiliation
-                <input type="text" name="affiliation" required />
-              </label>
-            </div>
-            <div>
-              <label>
-                <input
-                  type="checkbox"
-                  name="isPresenter"
-                  onChange="onIsPresenterChange()"
-                />
-                Presenting Author
-              </label>
-            </div>
-            <button type="button" class="button" onclick="onRemoveAuthor()">
-              -
-            </button>
-          </div>
-        </div>
+        <div class="authorsList" id="authorsList"></div>
         <div>
           <button type="button" class="button" onclick="onAddAuthor()">
             Add Author

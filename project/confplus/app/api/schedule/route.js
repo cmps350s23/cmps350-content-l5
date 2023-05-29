@@ -1,4 +1,4 @@
-import { getSchedule, schedRepo } from "../repos/schedule-repo"
+import { getSchedule, upsertSchedule } from "./schedule-repo"
 
 export async function GET(request) {
   try {
@@ -11,28 +11,13 @@ export async function GET(request) {
     return Response.json(schedule)
   } catch (e) {
     console.log(e)
-    return Response.json(
-      { error: "There was an internal error" },
-      { status: 500 }
-    )
+    return Response.json({ error: e.error || e.toString() }, { status: 500 })
   }
 }
 
 export async function POST(request) {
   //add new session to schedule
-  const newSession = await request.json()
-  const sess = await schedRepo.addSession(newSession)
-  return Response.json(sess)
-}
-
-export async function PUT(request) {
-  //update session in schedule
-  const updatedSession = await request.json()
-  const sess = await schedRepo.updateSession(updatedSession)
-  return Response.json(sess)
-}
-
-export async function DELETE(request) {
-  //delete entire schedule
-  return Response.json(schedRepo.deleteSchedule())
+  let schedule = await request.json()
+  schedule = await upsertSchedule(schedule)
+  return Response.json(schedule)
 }

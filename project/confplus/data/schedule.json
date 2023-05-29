@@ -1,1 +1,50 @@
-[{"id":1,"title":"Web Development","date":"12/06/2023","location":"Female Engineering Building C07-145","presentations":[{"paperId":4,"startTime":"15:00","endTime":"15:50"},{"paperId":1,"startTime":"17:30","endTime":"17:50"}]},{"id":2,"title":"Cyber Security","date":"13/06/2023","location":"QU Library B13-201","presentations":[{"paperId":2,"startTime":"16:00","endTime":"16:50"}]},{"title":"Test me","date":"14/06/2023","location":"Female Engineering Building C07-145","presentations":[],"id":3}]
+[
+  {
+    "id": 1,
+    "title": "Web Development",
+    "date": "12/06/2023",
+    "location": "Female Engineering Building C07-145",
+    "presentations": [
+      {
+        "id": 1,
+        "paperId": 4,
+        "startTime": "16:00",
+        "endTime": "16:50"
+      },
+      {
+        "id": 2,
+        "paperId": 1,
+        "startTime": "17:30",
+        "endTime": "17:50"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Cybersecurity",
+    "date": "13/06/2023",
+    "location": "QU Library B13-201",
+    "presentations": [
+      {
+        "id": 1,
+        "paperId": 2,
+        "startTime": "16:00",
+        "endTime": "16:50"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Web App Testing",
+    "date": "14/06/2023",
+    "location": "Female Engineering Building C07-145",
+    "presentations": [
+      {
+        "id": 1,
+        "paperId": 5,
+        "startTime": "07:46",
+        "endTime": "08:46"
+      }
+    ]
+  }
+]

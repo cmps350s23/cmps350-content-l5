@@ -64,8 +64,12 @@ main:has(#sessionsList){
     border-radius: 1rem;
 }
 
+.action-buttons {
+    display: flex;
+}
+
 .action-buttons button{
-    min-width: 7.25rem;
+    min-width: 2rem;
 }
 
 .popup{

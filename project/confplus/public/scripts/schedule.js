@@ -1,9 +1,47 @@
-await fillAffiliationDD()
-const schedule = await getSchedule()
-//console.dir(schedule);
-displaySchedule(schedule)
+document.addEventListener("DOMContentLoaded", async () => {
+  await loadDateOptions()
+  const schedule = await getSchedule()
+  //console.dir(schedule);
+  displaySchedule(schedule)
+  setLoginMenu()
+})
 
-async function getInstitutions() {
+function setLoginMenu() {
+  const user = localStorage.user ? JSON.parse(localStorage.user) : null
+  const authMenu = user
+    ? `<span>
+        ${
+          user.role == "reviewer"
+            ? '<a href="/review-paper.html">Review Paper</a>'
+            : ""
+        }
+        ${
+          user.role == "author"
+            ? '<a href="/submit-paper.html">Submit Paper</a>'
+            : ""
+        }
+        ${
+          user.role == "organizer"
+            ? '<a href="/edit-schedule.html">Edit Schedule</a>'
+            : ""
+        }
+          <span>Welcome ${user.firstName} ${user.lastName}</span>
+          <a href="#" onClick="onSignOut()">
+            (Sign Out)
+          </a>
+        </span>
+        `
+    : '<a href="/login.html">Login</a>'
+  document.querySelector("#auth-menu").innerHTML = authMenu
+}
+
+function onSignOut() {
+  localStorage.removeItem("user")
+  setLoginMenu()
+  window.location.href = "/index.html"
+}
+
+async function getConfDates() {
   const res = await fetch("/api/confdates")
   return await res.json()
 }
@@ -14,19 +52,16 @@ async function getSchedule(date) {
   return await res.json()
 }
 
-async function fillAffiliationDD() {
-  //Populate date filter dropdown
-  const confDatesDD = document.querySelector("#confDatesDD")
-  const confDates = await getInstitutions()
+async function loadDateOptions() {
+  //Populate conf dates dropdown
+  const conferenceDateOptions = document.querySelector("#conferenceDateOptions")
+  const confDates = await getConfDates()
   confDates.forEach((d) => {
     const option = document.createElement("option")
     option.value = d
     option.text = d
-    confDatesDD.appendChild(option)
+    conferenceDateOptions.appendChild(option)
   })
-
-  //Add event listener to dropdown
-  confDatesDD.addEventListener("change", (e) => onDateChange(e.target.value))
 }
 
 async function onDateChange(date) {
@@ -49,7 +84,7 @@ function scheduleToHTML(schedule) {
     .map(
       (session) => `<div class="session-card">
             <div class="session-header">
-                <h3>${session.title}</h3>
+                <h3>Session ${session.id}:  ${session.title}</h3>
                 <div class="date-location">
                     <p><i class="fa fa-calendar"></i> ${session.date} </p>
                     <p><i class="fa fa-map-marker"></i> ${session.location}</p>
@@ -63,7 +98,7 @@ function scheduleToHTML(schedule) {
     .join("<hr>")
 }
 function presentationToHTML(presentations) {
-  if (presentations.length == 0) {
+  if (!presentations || presentations.length == 0) {
     return '<p class="unavailable">No Presentations found.</p>'
   }
   return presentations
@@ -73,8 +108,11 @@ function presentationToHTML(presentations) {
             <div class="title-button">
                 <h4>${p.title}</h4>
             </div>
-            <p><i class="fa fa-clock-o"></i> ${p.startTime} - ${p.endTime}</p>
-            <p class="presenter">Presenter: ${p.presenter}</p>
+            <p>
+              Presenter: ${p.presenter}
+              <i class="fa fa-clock-o"></i> 
+              ${p.startTime} - ${p.endTime}
+            </p>
         </div>`
     )
     .join("")

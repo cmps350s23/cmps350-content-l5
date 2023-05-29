@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Schedule Editor</title>
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/forms-style.css" />
+    <link rel="stylesheet" href="styles/schedule-style.css" />
+  </head>
+  <body>
+    <nav>
+      <img src="images/logo.png" alt="" />
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="schedule.html">Schedule</a></li>
+        <li id="auth-menu"></li>
+      </ul>
+    </nav>
+
+    <!-- A modal dialog containing the session form -->
+    <dialog id="sessionDialog">
+      <h1>Add Session</h1>
+      <hr />
+      <form>
+        <input type="hidden" id="id" name="id" />
+        <div>
+          <label for="title">Session Title:</label>
+          <input type="text" id="title" name="title" required />
+        </div>
+        <div>
+          <label for="date">Date:</label>
+          <select name="date" id="dateOptions" required></select>
+        </div>
+        <div>
+          <label for="location">Location:</label>
+          <select name="location" id="locationOptions" required></select>
+        </div>
+        <div>
+          <button onclick="onSessionDialogCancel()">Cancel</button>
+          <button onclick="onSessionDialogSubmit()">Confirm</button>
+        </div>
+      </form>
+    </dialog>
+
+    <!-- A modal dialog containing the presentation form -->
+    <dialog id="presentationDialog">
+      <h1>Add Presentation</h1>
+      <hr />
+      <form>
+        <input type="hidden" id="id" name="id" />
+        <input type="hidden" name="sessionId" id="sessionId" value="" />
+        <label for="paperOptions">Select a paper</label>
+        <select name="paperId" id="paperOptions" required></select>
+        <div>
+          <label for="startTime">Presentation Starts: </label>
+          <input type="time" name="startTime" id="startTime" required />
+        </div>
+        <div>
+          <label for="endTime">Presentation Ends: </label>
+          <input type="time" id="endTime" name="endTime" required />
+        </div>
+        <div>
+          <button onclick="onPresentationDialogCancel()">Cancel</button>
+          <button onclick="onPresentationDialogSubmit()">Confirm</button>
+        </div>
+      </form>
+    </dialog>
+
+    <header class="schedule-header">
+      <h2>Confrence Schedule</h2>
+      <button class="button add-btn" onclick="addSession()">
+        <i class="fa fa-plus"></i>New Session
+      </button>
+      <button class="button save-btn" onclick="saveSchedule()">
+        <i class="fa fa-save"></i>Save Schedule
+      </button>
+    </header>
+
+    <main>
+      <div class="card-list" id="sessionsList"></div>
+    </main>
+
+    <footer>
+      <hr />
+      <p class="footer">ConfPlus © 2023</p>
+    </footer>
+    <script src="scripts/edit-schedule.js"></script>
+  </body>
+</html>

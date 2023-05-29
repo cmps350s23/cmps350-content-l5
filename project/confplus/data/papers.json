@@ -4,7 +4,7 @@
     "title": "Bridging Mathematics and Computer Science Through Threshold Concepts",
     "authors": [
       {
-        "id": 1680975569412,
+        "id": 1,
         "firstName": "Dana",
         "lastName": "Yasser",
         "email": "fl005007@qu.edu.qa",
@@ -12,7 +12,7 @@
         "isPresenter": true
       },
       {
-        "id": 1680975569413,
+        "id": 2,
         "firstName": "Yaser",
         "lastName": "Yasser",
         "email": "dh005007@qu.edu.qa",
@@ -20,7 +20,7 @@
         "isPresenter": false
       },
       {
-        "id": 1680975569414,
+        "id": 3,
         "firstName": "Sara",
         "lastName": "Ahmed",
         "email": "gh005007@qu.edu.qa",
@@ -28,13 +28,9 @@
         "isPresenter": false
       }
     ],
-    "reviewers": [
-      6,
-      5
-    ],
+    "reviewers": [6, 5],
     "abstract": "Do you think you're living an ordinary life? You are so mistaken it's difficult to even explain. The mere fact that you exist makes you extraordinary. The odds of you existing are less than winning the lottery, but here you are. Are you going to let this extraordinary opportunity pass?",
     "paperURL": "/papers/sample.pdf",
-    "isPresented": true,
     "reviews": [
       {
         "reviewerId": 6,
@@ -47,8 +43,8 @@
         "reviewerId": 13,
         "overallRating": "-2",
         "contribution": "1",
-        "strength": "Bad 1",
-        "weakness": "Bad 2"
+        "strength": "Shallow paper",
+        "weakness": "No contribution"
       }
     ]
   },
@@ -57,7 +53,7 @@
     "title": "Abstracted Power and Responsibility in Computer Science Ethics Education",
     "authors": [
       {
-        "id": 1680975569416,
+        "id": 4,
         "firstName": "Ahmed",
         "lastName": "Yasser",
         "email": "ay005007@qu.edu.qa",
@@ -65,7 +61,7 @@
         "isPresenter": true
       },
       {
-        "id": 1680975569417,
+        "id": 5,
         "firstName": "Tara",
         "lastName": "Yasser",
         "email": "gh005007@qu.edu.qa",
@@ -73,7 +69,7 @@
         "isPresenter": false
       },
       {
-        "id": 16809755694018,
+        "id": 6,
         "firstName": "Yara",
         "lastName": "Tamer",
         "email": "fh005007@qu.edu.qa",
@@ -81,13 +77,9 @@
         "isPresenter": false
       }
     ],
-    "reviewers": [
-      3,
-      5
-    ],
+    "reviewers": [3, 5],
     "abstract": "He had done everything right. There had been no mistakes throughout the entire process. It had been perfection and he knew it without a doubt, but the results still stared back at him with the fact that he had lost.",
     "paperURL": "/papers/sample.pdf",
-    "isPresented": true,
     "reviews": [
       {
         "reviewerId": 3,
@@ -110,7 +102,7 @@
     "title": "Technology Talent Development: Beyond an Hour of Code.",
     "authors": [
       {
-        "id": 1680975569420,
+        "id": 7,
         "firstName": "Ken",
         "lastName": "John",
         "email": "kj005007@qu.edu.qa",
@@ -118,7 +110,7 @@
         "isPresenter": true
       },
       {
-        "id": 1680975569421,
+        "id": 8,
         "firstName": "Hana",
         "lastName": "Yasser",
         "email": "sl005007@qu.edu.qa",
@@ -126,7 +118,7 @@
         "isPresenter": false
       },
       {
-        "id": 1680975569422,
+        "id": 9,
         "firstName": "Saber",
         "lastName": "Ahmed",
         "email": "bk005007@qu.edu.qa",
@@ -134,10 +126,7 @@
         "isPresenter": false
       }
     ],
-    "reviewers": [
-      4,
-      9
-    ],
+    "reviewers": [4, 9],
     "abstract": "As technologically gifted students apply their abilities to computer science, they naturally flow through the talent development stages of potential, competency, and expertise. Processes that\n    have always been\n    important for gifted\n    students to learn as they\n    develop potential are\n    embedded in learning\n    code, which engages the\n    beginning programmer in\n    rich and complex authentic\n    projects (Housand et al.,2017).",
     "paperURL": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
     "isPresented": false,
@@ -147,7 +136,7 @@
         "overallRating": "-1",
         "contribution": "5",
         "weakness": "Yupp",
-        "strength": "BBBBB"
+        "strength": "Cool!"
       }
     ]
   },
@@ -156,7 +145,7 @@
     "title": "Abstraction in Computer Science Education: An Overview",
     "authors": [
       {
-        "id": 1680975569424,
+        "id": 10,
         "firstName": "Jana",
         "lastName": "Raja",
         "email": "jj005007@qu.edu.qa",
@@ -164,7 +153,7 @@
         "isPresenter": true
       },
       {
-        "id": 1680975569425,
+        "id": 11,
         "firstName": "Hana",
         "lastName": "Yasser",
         "email": "sl005007@qu.edu.qa",
@@ -172,7 +161,7 @@
         "isPresenter": false
       },
       {
-        "id": 1680975569426,
+        "id": 12,
         "firstName": "Saber",
         "lastName": "Ahmed",
         "email": "bk005007@qu.edu.qa",
@@ -180,13 +169,9 @@
         "isPresenter": false
       }
     ],
-    "reviewers": [
-      9,
-      8
-    ],
+    "reviewers": [9, 8],
     "abstract": "The wolves stopped in their tracks, sizing up the mother and her cubs. It had been over a week since their last meal and they were getting desperate. The cubs would make a good meal, but there were high risks taking on the mother Grizzly. A decision had to be made and the wrong choice could signal the end of the pack.",
     "paperURL": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
-    "isPresented": true,
     "reviews": [
       {
         "reviewerId": 8,
@@ -206,21 +191,20 @@
   },
   {
     "id": 5,
-    "title": "PAPER TEST",
-    "abstract": "mkcldc",
+    "title": "Test paper",
+    "abstract": "Cool test paper",
     "authors": [
       {
-        "firstName": " ddlwk",
-        "lastName": " mlmkf",
-        "email": "wow@wow.com",
-        "affiliation": "wmekv"
+        "id": 13,
+        "firstName": "Abbas",
+        "lastName": " Ibn Firnas",
+        "email": "abbas@tar.com",
+        "affiliation": "Tar.com",
+        "isPresenter": true
       }
     ],
     "paperURL": "/papers/paper5.pdf",
-    "reviewers": [
-      9,
-      13
-    ],
+    "reviewers": [9, 13],
     "isPresented": false,
     "reviews": [
       {
@@ -231,151 +215,5 @@
         "weakness": "Cool"
       }
     ]
-  },
-  {
-    "title": "Test",
-    "abstract": "Test",
-    "authors": [
-      {
-        "firstName": "Abdelkarim",
-        "lastName": "Erradi",
-        "email": "erradi@live.com",
-        "affiliation": "QU"
-      }
-    ],
-    "paperURL": "/papers/1685221443081_Invoice-SINV707951.pdf",
-    "id": 1,
-    "reviewers": [
-      6,
-      12
-    ],
-    "isPresented": false,
-    "reviews": []
-  },
-  {
-    "title": "Test paper",
-    "abstract": "Test me",
-    "authors": [
-      {
-        "firstName": {},
-        "lastName": "Erradi",
-        "email": "erradi@live.com",
-        "affiliation": "QU"
-      },
-      {
-        "firstName": {},
-        "lastName": "Keen",
-        "email": "um@outlook.com",
-        "affiliation": "CMU"
-      }
-    ],
-    "paperURL": "/papers/1685227143472_Invoice-SINV707951.pdf",
-    "id": 1,
-    "reviewers": [
-      13,
-      6
-    ],
-    "isPresented": false,
-    "reviews": []
-  },
-  {
-    "title": "A",
-    "abstract": "B",
-    "authors": [
-      {
-        "firstName": "Abdelkarim",
-        "lastName": "Erradi",
-        "email": "erradi@live.com",
-        "affiliation": "QU"
-      },
-      {
-        "firstName": "Sara",
-        "lastName": "Keen",
-        "email": "umkhadija@outlook.com",
-        "affiliation": "CMU"
-      }
-    ],
-    "paperURL": "/papers/1685231157412_Escane11.pdf",
-    "id": 1
-  },
-  {
-    "title": "A",
-    "abstract": "B",
-    "authors": [
-      {
-        "firstName": "Abdelkarim",
-        "lastName": "Erradi",
-        "email": "erradi@live.com",
-        "affiliation": "QU"
-      }
-    ],
-    "paperURL": "/papers/1685231371391_Autonomous_Response_Agent_for_CPS_Attacks__DRL_IRS.pdf",
-    "id": 6
-  },
-  {
-    "title": "A",
-    "abstract": "Test",
-    "authors": [
-      {
-        "firstName": "Abdelkarim",
-        "lastName": "Erradi",
-        "email": "erradi@live.com",
-        "affiliation": "QU",
-        "isPresenter": true
-      },
-      {
-        "firstName": "Mariam",
-        "lastName": "Erradi",
-        "email": "umkhadija@outlook.com",
-        "affiliation": "CMU",
-        "isPresenter": false
-      }
-    ],
-    "paperURL": "/papers/1685232885065_Autonomous_Response_Agent_for_CPS_Attacks__DRL_IRS.pdf",
-    "id": 7
-  },
-  {
-    "title": "A",
-    "abstract": "ABC",
-    "authors": [
-      {
-        "firstName": "Abdelkarim",
-        "lastName": "Erradi",
-        "email": "erradi@live.com",
-        "affiliation": "QU",
-        "isPresenter": false
-      },
-      {
-        "firstName": "Mariam",
-        "lastName": "Erradi",
-        "email": "umkhadija@outlook.com",
-        "affiliation": "CMU",
-        "isPresenter": true
-      }
-    ],
-    "paperURL": "/papers/1685233383709_Autonomous_Response_Agent_for_CPS_Attacks_(DRL-IRS).pdf",
-    "id": 8
-  },
-  {
-    "title": "a",
-    "abstract": "b",
-    "authors": [
-      {
-        "firstName": "Mariam",
-        "lastName": "Erradi",
-        "email": "erradi@live.com",
-        "affiliation": "QU",
-        "isPresenter": false
-      },
-      {
-        "firstName": "Sara",
-        "lastName": "Keen",
-        "email": "umkhadija@outlook.com",
-        "affiliation": "CMU",
-        "isPresenter": true
-      }
-    ],
-    "paperURL": "/papers/1685233735254_Invoice-SINV707951.pdf",
-    "id": 9
   }
 ]
