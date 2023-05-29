@@ -17,7 +17,7 @@
       <h1>Review Paper</h1>
     </header>
     <main>
-      <div class="paperInfo">
+      <div class="paper-info">
         <label for="paperOptions">Select a paper to review:</label>
         <select
           name="paperId"
@@ -28,7 +28,7 @@
         ></select>
       </div>
 
-      <div class="paperInfo">
+      <div id="paperInfo" class="paper-info">
         <div class="resetStyle">
           <h4>Paper Information</h4>
         </div>
@@ -45,7 +45,7 @@
         </details>
         <a id="paperURL" href="#" target="_blank" class="button">View PDF</a>
       </div>
-      <form action="#" id="reviewForm" onsubmit="onSubmit()">
+      <form id="reviewForm" onsubmit="onSubmit()">
         <h4>Paper Review</h4>
         <hr />
         <fieldset>
