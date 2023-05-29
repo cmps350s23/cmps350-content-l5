@@ -54,13 +54,13 @@ async function getSchedule(date) {
 
 async function loadDateOptions() {
   //Populate conf dates dropdown
-  const conferenceDateOptions = document.querySelector("#conferenceDateOptions")
+  const confDateOptions = document.querySelector("#confDateOptions")
   const confDates = await getConfDates()
-  confDates.forEach((d) => {
+  confDates.forEach((date) => {
     const option = document.createElement("option")
-    option.value = d
-    option.text = d
-    conferenceDateOptions.appendChild(option)
+    option.value = date
+    option.text = date
+    confDateOptions.appendChild(option)
   })
 }
 
