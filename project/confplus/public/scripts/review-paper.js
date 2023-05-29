@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 async function onPaperSelected() {
   const paperId = paperOptions.value
+  if (!paperId) return
   const paper = getPaper(paperId)
   const review = paper.reviews?.find((review) => review.reviewerId == user.id)
   console.log("onPaperSelected - review:", paper.reviews, user.id)
@@ -139,7 +140,6 @@ async function loadPaperOptions() {
     const option = document.createElement("option")
     option.value = ""
     option.text = "No Papers to Review"
-    option.disabled = true
     paperOptions.appendChild(option)
     return
   }
