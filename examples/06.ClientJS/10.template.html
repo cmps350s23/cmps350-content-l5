@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--
+        More info about Templates and Template tag:
+        https://gomakethings.com/html-templates-with-vanilla-javascript/
+        https://stackoverflow.com/questions/29182244/convert-a-string-to-a-template-string/41015840#41015840
+    -->
+    <title>Template</title>
+    <style>
+      .tech {
+        color: rebeccapurple;
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const app = document.querySelector("#app")
+        const itemTemplate = document.querySelector("#item-template")
+        const webTechs = ["HTML", "CSS", "JavaScript"]
+
+        const html = webTechs
+          .map((tech) => render(itemTemplate.innerHTML, { tech }))
+          .join("")
+
+        app.innerHTML = html
+      })
+
+      /**
+       * Get a template from a string
+       * https://stackoverflow.com/a/41015840
+       * @param  {String} str    The string to interpolate
+       * @param  {Object} params The parameters
+       * @return {String}        The interpolated string
+       */
+      function render(str, params) {
+        const names = Object.keys(params)
+        const vals = Object.values(params)
+        return new Function(...names, `return \`${str}\`;`)(...vals)
+      }
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <template id="item-template">
+      <div class="tech">
+        <strong>${tech}</strong>
+      </div>
+    </template>
+  </body>
+</html>
