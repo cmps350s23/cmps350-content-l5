@@ -30,12 +30,7 @@ export default async function CatForm({ params }) {
       {cat ? <h3>Edit Cat {cat?.name}</h3> : <h3>Add Cat</h3>}
       <br />
       {cat ? <img src={cat?.imageUrl} width={150} /> : ""}
-      <form
-        method="post"
-        encType="multipart/form-data"
-        action="/api/cats"
-        //action={onSubmitHandler}
-      >
+      <form method="post" encType="multipart/form-data" action="/api/cats">
         <input name="id" type="hidden" defaultValue={cat?.id} />
         <label>Name</label>
         <input name="name" type="text" defaultValue={cat?.name} />
